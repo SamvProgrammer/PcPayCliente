@@ -1,0 +1,31 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmPagueDirectoReimpresion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Background="White"
+      mc:Ignorable="d"  Loaded="Page_Loaded_1"
+      d:DesignHeight="460" d:DesignWidth="775" 
+	Title="frmPagueDirectoReimpresion" VerticalAlignment="Top" HorizontalAlignment="Left">
+
+    <Grid>
+        <Border Grid.Row="0">
+            <Grid>
+                <Label HorizontalAlignment="Stretch" Content="Seleccione una opción" Margin="60,86,210,0" Style="{DynamicResource labelMitStyle}" Foreground="#FFE68779" FontWeight="SemiBold"/>
+                <RadioButton Foreground="Azure" IsChecked="True" Click="optUltima_Click" x:Name="optUltima" Content="Último comprobante" HorizontalAlignment="Left" Height="18" Margin="107,115,0,0" VerticalAlignment="Top" Width="196"/>
+                <RadioButton Click="optComprobante_Click" x:Name="optComprobante" Content="Número de comprobante" HorizontalAlignment="Left" Height="23" Margin="106,138,0,0" VerticalAlignment="Top" Width="197"/>
+                <Label Visibility="Hidden" x:Name="lblNumero" Content="Número" HorizontalAlignment="Left" Margin="187,63,0,0" VerticalAlignment="Top"/>
+                <TextBox Visibility="Hidden" PreviewTextInput="txtNumero_PreviewTextInput" x:Name="txtNumero" HorizontalAlignment="Left" Height="23" Margin="260,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
+                <Button Click="cmdAceptar_Click" x:Name="cmdAceptar" Content="Aceptar" HorizontalAlignment="Left" Height="37" Margin="243,184,0,0" VerticalAlignment="Top" Width="93"/>
+                <Button Click="Button_Click" Content="Cancelar" HorizontalAlignment="Left" Height="37" Margin="377,184,0,0" VerticalAlignment="Top" Width="91"/>
+            </Grid>
+        </Border>
+        <Label  x:Name="LTITTULO" Style="{DynamicResource lblTitleMit}" Content="PAGUE DIRECTO REIMPRESIÓN" HorizontalAlignment="Left" Margin="30,10,0,0" Width="745" />
+        <Button x:Name="BSALIR" Margin="0,12,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+            <Button.Background>
+                <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

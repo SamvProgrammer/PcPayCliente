@@ -1,0 +1,15 @@
+﻿<Window x:Class="PcPay.Forms.Formularios.frmBlosbloquear"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowStartupLocation="CenterOwner"
+        Title="Notificación" Height="580.597" Width="805.97" Loaded="Window_Loaded"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" ResizeMode="NoResize" Icon="/PcPay;component/PcPay.ico">
+    <Grid>
+        <Grid Visibility="Visible" x:Name="visualizador" HorizontalAlignment="Left" Height="530" Margin="10,10,0,0" VerticalAlignment="Top" Width="778">
+            <WindowsFormsHost Name="navegador">
+                <WindowsFormsHost.Child>
+                    <wf:WebBrowser DocumentTitleChanged="wbWinForms_DocumentTitleChanged" />
+                </WindowsFormsHost.Child>
+            </WindowsFormsHost>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,103 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmCancelacion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" Background="White"
+      d:DesignHeight="400" VerticalAlignment="Top"
+	Title="frmCancelacion" Loaded="loadPage" Height="465" Width="775" HorizontalAlignment="Left" Unloaded="Page_Unloaded">
+
+    <!--*******************Inicia el formulario***********************-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="351*"/>
+        </Grid.RowDefinitions>
+
+        <!--*************Parte de los botones y textbox****************-->
+        <!--**************Parte de los resultados***********************-->
+        <Grid  Height="34" VerticalAlignment="Top" Margin="0,292.392,0,0" Grid.Row="2" d:IsHidden="True">
+            <Image HorizontalAlignment="Left" Height="18" Margin="397,51,0,0" VerticalAlignment="Top" Width="25"
+                   Stretch="UniformToFill"/>
+            <Label  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="113" Width="441" x:Name="lblMensajeX"/>
+        </Grid>
+        <Label x:Name="LTITULO" Content="Cancelación"  Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="30,0,0,0" Width="745" Grid.Row="1" />
+
+        <Button x:Name="BSALIR" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" RenderTransformOrigin="0.445,1.046" Grid.Row="1" IsTabStop="False" Margin="0,2,2,0">
+            <Button.Background>
+                <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+            </Button.Background>
+        </Button>
+
+        <Grid  Margin="5,0,10,0" Height="225" VerticalAlignment="Top" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="107*"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="imgEmail" Height="82" Margin="599,3,63,0" VerticalAlignment="Top" Cursor="Hand" Background="#FFF1F1F1" Grid.Row="2" Grid.RowSpan="2">
+                <Image HorizontalAlignment="Center" Height="45" Margin="24,10,24,0" VerticalAlignment="Top" Width="45" Source="/PcPay;component/Resources/email.png"/>
+                <Label x:Name="LADDBOLETOS" Content="Voucher" FontWeight="Bold" Margin="21,55,22,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Trebuchet MS" Width="55"/>
+            </Grid>
+            <Button  Margin="322,20,0,0" x:Name="cmdEnviar" Click="Procesar" Content="Procesar" RenderTransformOrigin="0.43,1.714" Height="35" 
+                     VerticalAlignment="Top" HorizontalAlignment="Left" Width="131" Cursor="Hand" Grid.Row="1" TabIndex="3">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button  Margin="0,0,166,5" x:Name="cmdVoucher" Click="imprimirVooucher" Content="Imprimir Voucher" Height="35" 
+                     VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="125" Cursor="Hand" Grid.Row="1" IsTabStop="False">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button  Margin="0,0,307,5" x:Name="cmdNuevo" Click="Nuevo" Content="Otra Cancelación" Height="35" VerticalAlignment="Bottom" 
+                     HorizontalAlignment="Right" Width="131" Cursor="Hand" Grid.Row="1" IsTabStop="False">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Label x:Name="label_6" Content="Num Operación" Margin="30,3,0,0" Style="{DynamicResource labelMitStyle}"/>
+            <Label x:Name="label_11" Content="Num Autorización" Margin="322,3,0,0" Style="{DynamicResource labelMitStyle}" Width="158"/>
+            <Label x:Name="label_9" Content="Importe" Margin="30,3,0,0" Style="{DynamicResource labelMitStyle}" Grid.Row="1" />
+
+
+            <Grid HorizontalAlignment="Left" Height="32               " Margin="30,20,0,0" VerticalAlignment="Top" Width="272" Background="White">
+                <Border Style="{DynamicResource imgBorderMit}">
+                    <Image Source="/PcPay;component/Resources/auth.png" Style="{DynamicResource imageStyleMit2}"/>
+                </Border>
+                <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                    <TextBox PreviewTextInput="numero" MaxLength="9" x:Name="txtNumOper" Style="{DynamicResource mitStyleText2}" TabIndex="0" />
+                </Border>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="32               " Margin="322,20,0,0" VerticalAlignment="Top" Width="272" Background="White">
+                <Border Style="{DynamicResource imgBorderMit}">
+                    <Image Source="/PcPay;component/Resources/auth.png" Style="{DynamicResource imageStyleMit2}"/>
+                </Border>
+                <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                    <TextBox CharacterCasing="Upper" PreviewTextInput="txtNumAut_PreviewTextInput" MaxLength="6" x:Name="txtNumAut" 
+                             Style="{DynamicResource mitStyleText2}" TabIndex="1"/>
+                </Border>
+            </Grid>
+            <Grid HorizontalAlignment="Left" Height="32               " Margin="30,20,0,0" VerticalAlignment="Top" Width="272" Background="White" Grid.Row="1">
+                <Border Style="{DynamicResource imgBorderMit}">
+                    <Image Source="/PcPay;component/Resources/money.png"  Style="{DynamicResource imageStyleMit2}"/>
+                </Border>
+                <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                    <TextBox  CommandManager.PreviewExecuted="textBox_PreviewExecuted"  LostFocus="Importe_LostFocus" MaxLength="9" PreviewTextInput="Importe_PreviewTextInput" x:Name="Importe" 
+                             Style="{DynamicResource mitStyleText2}" TabIndex="2" />
+                </Border>
+            </Grid>
+        </Grid>
+        <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="4" Grid.RowSpan="2" d:IsLocked="True"/>
+    </Grid>
+</Page>

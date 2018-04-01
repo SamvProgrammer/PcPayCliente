@@ -1,0 +1,26 @@
+﻿<Window x:Class="PcPay.Forms.Formularios.MessagesW.frmCuponRedimir"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cobro aprobado"  Height="480" Width="600" WindowStartupLocation="CenterOwner" WindowStyle="None"
+        AllowsTransparency="True" Background="{x:Null}" ShowInTaskbar="False" ResizeMode="NoResize">
+    <Grid Background="#3FFFFFFF" Margin="10,0,10,10">
+        <Border Name="BBODY" BorderBrush="#FF0C4375" BorderThickness="3" Margin="0" Background="White" HorizontalAlignment="Center" Width="575" Height="180" VerticalAlignment="Center" AllowDrop="True">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+            <Grid Background="White">
+
+                <Label x:Name="LTITLE" Content="DESCRIPCIÓN" Margin="0,5,0,0" VerticalAlignment="Top"
+                       FontSize="20" FontWeight="SemiBold" Foreground="#FF0C4375" HorizontalContentAlignment="Center" Padding="5,0" 
+                       VerticalContentAlignment="Center"/>
+                <Button x:Name="BREDIMIR" Content="Redimir" Margin="0,0,10,5" HorizontalAlignment="Right" Width="100" 
+                        Click="BACEPTAR_Click" Height="35" VerticalAlignment="Bottom" Foreground="White" FontSize="16" BorderThickness="0"
+                        FontWeight="Thin" Background="#FF0C4375" Cursor="Hand" Padding="0" VerticalContentAlignment="Center" FontFamily="Trebuchet MS"/>
+                <TextBlock x:Name="TBMESSAGE" Margin="10,32,10,49" TextWrapping="Wrap" Text="{}{MESSAGE}" FontSize="20" FontWeight="Light" Foreground="#FF0C4375" FontFamily="Trebuchet MS"/>
+                <Button x:Name="BREGRESAR" Content="Regresar" Margin="10,0,0,5" HorizontalAlignment="Left" Width="100" 
+                	Click="BACEPTAR_Click" Height="35" VerticalAlignment="Bottom" Foreground="White" FontSize="16" BorderThickness="0"
+                	FontWeight="Thin" Background="#FF0C4375" Cursor="Hand" Padding="0" VerticalContentAlignment="Center" FontFamily="Trebuchet MS"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

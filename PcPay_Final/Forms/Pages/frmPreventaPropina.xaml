@@ -1,0 +1,253 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmPreventaPropina"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" Loaded="Page_Loaded"
+	Title="frmPreventaPropina" Width="775" Height="465" HorizontalAlignment="Left" >
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="418*"/>
+        </Grid.RowDefinitions>
+
+        <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="2" d:IsLocked="True"/>
+
+        <Label x:Name="LTITULO" Content="CONSUMO" Style="{DynamicResource lblTitleMit}" Margin="30,0,10,0" Width="Auto" Grid.Row="1" >
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+        <Button x:Name="BSALIR" Margin="0,0,10,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Grid.Row="1" IsTabStop="False">
+            <Button.Background>
+                <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+            </Button.Background>
+        </Button>
+        <TabControl x:Name="TCBODY" Height="332" Margin="0,0,10,0" VerticalAlignment="Top" BorderThickness="0" Background="{x:Null}" Grid.Row="2">
+            <TabItem x:Name="TITEMPROPINA" Header="Propina" Padding="1,2,6,2" IsHitTestVisible="True" Height="0" Background="{x:Null}">
+                <Grid Margin="2,2,-2,-2">
+                    <Grid Margin="30,6,10,0" Height="64" VerticalAlignment="Top">
+                        <Label Content="Ingresa el importe" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="140"  Style="{DynamicResource labelMitStyle}" Height="30"/>
+                        <Grid HorizontalAlignment="Left" Height="32" Margin="10,32,0,0" VerticalAlignment="Top" Width="311" Background="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="57*"/>
+                                <ColumnDefinition Width="254*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/money.png"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}" Grid.ColumnSpan="2">
+                                <TextBox  MaxLength="9" PreviewKeyDown="TIMPORTE_PreviewKeyDown" PreviewTextInput="Importe_PreviewTextInput" 
+                                         CommandManager.PreviewExecuted="textBox_PreviewExecuted" x:Name="TIMPORTE"    
+                                         TextWrapping="Wrap" KeyDown="TIMPORTE_KeyDown" TextChanged="TIMPORTE_TextChanged"
+                                         GotFocus="TIMPORTE_GotFocus" ToolTip="Presione enter para continuar." LostFocus="lostFocusImporte"
+                                         Style="{DynamicResource mitStyleText2}" TabIndex="0"  />
+                            </Border>
+                        </Grid>
+                    </Grid>
+                    <Grid x:Name="GPROPINA" IsEnabled="True" Margin="19,75,10,50">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="149*"/>
+                            <ColumnDefinition Width="583*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid HorizontalAlignment="Left" Height="32" Margin="305.358,31,0,0" VerticalAlignment="Top" Width="258" Background="White" Grid.Column="1">
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/money.png"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                                <TextBox IsEnabled="False" KeyboardNavigation.TabIndex="1" x:Name="TTOTAL" Style="{DynamicResource mitStyleText2}" IsTabStop="False" />
+                            </Border>
+                        </Grid>
+                        <Label Content="Selecciona el Porcentaje de propina." HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" Width="388"  Style="{DynamicResource labelMitStyle}" Grid.ColumnSpan="2"/>
+                        <RadioButton x:Name="OPT0" Content="0%" HorizontalAlignment="Left" Margin="30,47,0,0" VerticalAlignment="Top" IsChecked="True"
+                                     Click="OPT0_Click" FontSize="15" TabIndex="1"/>
+                        <RadioButton Click="OPT20_Click" x:Name="OPT5" Content="5%" HorizontalAlignment="Left" Margin="30,70,0,0" VerticalAlignment="Top" FontSize="15"
+                    		TabIndex="2"/>
+                        <RadioButton Click="OPT20_Click" x:Name="OPT10" Content="10%" HorizontalAlignment="Left" Margin="30,93,0,0" VerticalAlignment="Top" FontSize="15" 
+                    		TabIndex="3"
+                                     />
+                        <RadioButton Click="OPT20_Click" x:Name="OPT15" Content="15%" HorizontalAlignment="Left" Margin="30,116,0,0" VerticalAlignment="Top" FontSize="15"
+                    		TabIndex="4"/>
+                        <RadioButton Click="OPT20_Click" x:Name="OPT20" Content="20%" HorizontalAlignment="Left" Margin="30,139,0,0" VerticalAlignment="Top" FontSize="15" 
+                    		TabIndex="5"/>
+                        <RadioButton Click="OPTOTRO_Click" x:Name="OPTOTRO" Content="Otro Importe" HorizontalAlignment="Left" Margin="30,162,0,0" VerticalAlignment="Top"
+                    		Width="134" FontSize="15" TabIndex="6" Grid.ColumnSpan="2"/>
+                        <Label Content="$" HorizontalAlignment="Left" Margin="0.358,158,0,0" VerticalAlignment="Top" Width="17" FontWeight="Bold" FontSize="14" RenderTransformOrigin="1.059,0.667" Grid.Column="1"/>
+                        <Label Content="Total de importe." HorizontalAlignment="Left" Margin="305.358,10,0,0" VerticalAlignment="Top" Width="114"  Style="{DynamicResource labelMitStyle}" Grid.Column="1"/>
+                        <TextBox IsEnabled="False" MaxLength="9" CommandManager.PreviewExecuted="textBox_PreviewExecuted" x:Name="TOTRO" HorizontalAlignment="Left" Height="23" Margin="22.358,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ToolTip="Presione enter para continuar." KeyDown="TOTRO_KeyDown" LostFocus="TOTRO_LostFocus" PreviewTextInput="TOTRO_PreviewTextInput" TabIndex="8" IsTabStop="False" Grid.Column="1"/>
+                        <Button x:Name="BSIGUIENTE" Content="SIGUIENTE&gt;&gt;" HorizontalAlignment="Right" Margin="0,0,20,0" Width="100" Cursor="Hand" 
+                        	Click="BSIGUIENTE_Click" Height="35" VerticalAlignment="Bottom" TabIndex="9" Grid.Column="1" >
+                        </Button>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="TITEMCOBRO" Header="Cobro" Height="0" >
+                <Grid Margin="0,0,0,-32">
+                    <Grid Margin="20,1,0,0" Height="219" VerticalAlignment="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="60"/>
+                            <RowDefinition Height="42*"/>
+                        </Grid.RowDefinitions>
+                        <Label  x:Name="LREFERENCIA" Content="Referencia" HorizontalAlignment="Left" Margin="10,3,0,0" 
+                                VerticalAlignment="Top"  VerticalContentAlignment="Center" 
+                                HorizontalContentAlignment="Right" Style="{DynamicResource labelMitStyle}" />
+                        <Label Content="Mesero" HorizontalAlignment="Left" Margin="342,3,0,0" VerticalAlignment="Top" 
+                              Style="{DynamicResource labelMitStyle}" RenderTransformOrigin="-0.364,0.158"/>
+                        <Label Content="Turno" HorizontalAlignment="Left" Margin="550,4,0,0" VerticalAlignment="Top"
+                               Style="{DynamicResource labelMitStyle}" />
+
+                        <Label Content="Mesa" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
+                               Style="{DynamicResource labelMitStyle}" Grid.Row="1"/>
+                        <Label Content="Total" HorizontalAlignment="Left" Margin="262,3,0,0" VerticalAlignment="Top"
+                                Style="{DynamicResource labelMitStyle}"  RenderTransformOrigin="-0.235,0.431" Grid.Row="1"/>
+                        <Grid HorizontalAlignment="Left" Height="32               " Margin="262,24,0,0" VerticalAlignment="Top" Width="153" Background="White" Grid.Row="1">
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Source="/PcPay;component/Resources/money.png" Style="{DynamicResource imageStyleMit2}"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                                <TextBox MaxLength="9" CommandManager.PreviewExecuted="textBox_PreviewExecuted" IsEnabled="False"  x:Name="TTOTALPAGO" Style="{DynamicResource mitStyleText2}" 
+                                         TabIndex="4" TextChanged="TTOTALPAGO_TextChanged" />
+                            </Border>
+                        </Grid>
+                        <Label Content="Número tarjeta" HorizontalAlignment="Left" Margin="5,22,0,0" 
+                               VerticalAlignment="Top" Width="102" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Style="{DynamicResource labelMitStyle}" Padding="1" Grid.Row="2"/>
+                        <TextBox Visibility="Hidden" x:Name="TNOTARJETA1" HorizontalAlignment="Left" Height="22" Margin="257,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Style="{DynamicResource mitStyleText}" Grid.Row="1"/>
+                        <Grid HorizontalAlignment="Left" Height="32" Margin="10,41,0,0" VerticalAlignment="Top" Width="242" Background="White" Grid.Row="2">
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Source="/PcPay;component/Resources/card.png" Style="{DynamicResource imageStyleMit2}"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                                <TextBox Style="{DynamicResource mitStyleText2}" IsEnabled="False" MaxLength="16" x:Name="TNOTARJETA" ToolTip="Número de tarjeta." IsTabStop="False" />
+                            </Border>
+                        </Grid>
+
+
+                        <TextBox Visibility="Hidden" x:Name="TMES" HorizontalAlignment="Left" Height="22" Margin="599,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Grid.Row="2" />
+                        <TextBox Visibility="Hidden" x:Name="TANIO" HorizontalAlignment="Left" Height="22" Margin="672,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Grid.Row="2" />
+                        <Grid HorizontalAlignment="Left" Height="32" Margin="257,0,0,26" VerticalAlignment="Bottom" Width="145" Background="White" Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="13*"/>
+                                <ColumnDefinition Width="49*"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Source="/PcPay;component/Resources/calendar.png" Style="{DynamicResource imageStyleMit2}"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}" Grid.ColumnSpan="2" >
+                                <TextBox  Style="{DynamicResource mitStyleText2}" x:Name="TFECHAVENC"   TextWrapping="Wrap" Text="{}{mm}/{YY}"  IsEnabled="False" IsTabStop="False"/>
+                            </Border>
+                        </Grid>
+
+
+
+                        <Label Style="{DynamicResource labelMitStyle}" Content="Nombre tarjetahabiente" 
+                               HorizontalAlignment="Left" Margin="407,22,0,0" VerticalAlignment="Top" 
+                               VerticalContentAlignment="Center" HorizontalContentAlignment="Right"  Padding="1" Grid.Row="2"/>
+                        <Grid HorizontalAlignment="Left" Height="32" Margin="407,41,0,0" VerticalAlignment="Top" Width="322" Background="White" Grid.Row="2">
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Source="/PcPay;component/Resources/mituser.png" Style="{DynamicResource imageStyleMit2}"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                                <TextBox Style="{DynamicResource mitStyleText2}"  x:Name="TNOMTARJETAHAB"  Text=""  IsEnabled="False"/>
+                            </Border>
+                        </Grid>
+
+
+                        <Label Content="Fecha vencimiento" HorizontalAlignment="Left" Margin="257,22,0,0" VerticalAlignment="Top" 
+                               VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Style="{DynamicResource labelMitStyle}" Padding="1" Grid.Row="2"/>
+                        <Label x:Name="LMONEDA" Content="MXN" HorizontalAlignment="Left" Margin="420,31,0,0" VerticalAlignment="Top" Width="37" Height="20" FontWeight="SemiBold" RenderTransformOrigin="0.324,0.1" Style="{DynamicResource styleLabel}" Padding="1" Grid.Row="1"/>
+                        <ComboBox x:Name="CBANCO" HorizontalAlignment="Left" Margin="200,61,0,0" VerticalAlignment="Top" Width="172" Visibility="Hidden" Grid.Row="2"/>
+                        <Label x:Name="LFORMAPAGO" Content="Forma pago" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="220" Height="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Visibility="Hidden" Grid.Row="2"/>
+                        <ComboBox x:Name="CFORMAPAGO" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="185" Visibility="Hidden" Grid.Row="2"/>
+                        <Grid HorizontalAlignment="Left" Height="32               " Margin="10,20,0,0" VerticalAlignment="Top" Width="327" Background="White">
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                                <TextBox MaxLength="30" x:Name="TREFERENCIA" ToolTip="Introduzca una referencia." Style="{DynamicResource mitStyleText2}" 
+                                       CommandManager.PreviewExecuted="textBox_PreviewExecuted"  PreviewTextInput="letraNumero" GotFocus="TREFERENCIA_GotFocus" TabIndex="0"/>
+                            </Border>
+                        </Grid>
+                        <Grid HorizontalAlignment="Left" Height="32" Margin="342,20,0,0" VerticalAlignment="Top" Width="203" Background="White">
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Source="/PcPay;component/Resources/mitUser.png" Style="{DynamicResource imageStyleMit2}"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                                <TextBox MaxLength="30" CommandManager.PreviewExecuted="textBox_PreviewExecuted" PreviewTextInput="letraNumero"  x:Name="TMESERO" Style="{DynamicResource mitStyleText2}" TabIndex="1" />
+                            </Border>
+                        </Grid>
+
+
+                        <Grid HorizontalAlignment="Left" Height="32" Margin="550,20,0,0" VerticalAlignment="Top" Width="181" Background="White">
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Source="/PcPay;component/Resources/mitUser.png" Style="{DynamicResource imageStyleMit2}"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                                <TextBox MaxLength="30" CommandManager.PreviewExecuted="textBox_PreviewExecuted" PreviewTextInput="letraNumero"  x:Name="TTURNO" Style="{DynamicResource mitStyleText2}" ToolTip="Introduzca el turno."
+                                         TabIndex="2"  />
+                            </Border>
+                        </Grid>
+                        <Grid HorizontalAlignment="Left" Height="32" Margin="10,28,0,0" VerticalAlignment="Top" Width="238" Background="White" Grid.Row="1">
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Source="/PcPay;component/Resources/mitUser.png" Style="{DynamicResource imageStyleMit2}"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                                <TextBox MaxLength="10" CommandManager.PreviewExecuted="textBox_PreviewExecuted" PreviewTextInput="letraNumero" ToolTip="Introduzca la mesa."    
+                                         x:Name="TMESA" Style="{DynamicResource mitStyleText2}" TabIndex="3" />
+                            </Border>
+                        </Grid>
+                        <Grid x:Name="BENVIAMAIL" Height="57" Margin="599,10,56,0" VerticalAlignment="Top" Cursor="Hand" Background="#FFF1F1F1" Grid.RowSpan="2" Grid.Row="1">
+                            <Image HorizontalAlignment="Center" Height="32" Margin="24,2,25,0" VerticalAlignment="Top" Width="34" Source="/PcPay;component/Resources/email.png"/>
+                            <Label FontSize="10" FontWeight="Bold" x:Name="LADDBOLETOS" Content="Confirmación"  FontFamily="Trebuchet MS" Margin="6,34,0,3"/>
+                        </Grid>
+                        <Grid MouseDown="imgEmailFirmaPanel_MouseDown" x:Name="imgEmailFirmaPanel" Height="57" Margin="502,10,156,0" VerticalAlignment="Top" Cursor="Hand" Background="#FFF1F1F1" Grid.RowSpan="2" Grid.Row="1">
+                            <Image HorizontalAlignment="Center" Height="32" Margin="24,2,25,0" VerticalAlignment="Top" Width="34" Source="/PcPay;component/Resources/email.png"/>
+                            <Label FontSize="10" FontWeight="Bold" x:Name="nombre3" Content="Voucher"   FontFamily="Trebuchet MS" Margin="18,34,13,2"/>
+                        </Grid>
+                    </Grid>
+                    <Grid Margin="0,203,0,0" Height="65" VerticalAlignment="Top">
+                        <Button x:Name="BVOUCHER" Content="Imprimir voucher" HorizontalAlignment="Left" Margin="478,20,0,0"
+                    		VerticalAlignment="Top" Width="118" Height="35" Click="imprimir" IsEnabled="False" Cursor="Hand" 
+                    		MouseEnter="BACTIVARLECTOR_MouseEnter" RenderTransformOrigin="0.573,0.514">
+
+                        </Button>
+                        <Button x:Name="BCOBRAR" Content="Cobrar" HorizontalAlignment="Left" Margin="478,20,0,0" 
+                    		VerticalAlignment="Top" Width="100" Height="35" Click="BCOBRAR_Click" IsEnabled="False" Cursor="Hand" MouseEnter="BACTIVARLECTOR_MouseEnter"/>
+                        <Button x:Name="BACTIVARLECTOR" Content="Activar lector" HorizontalAlignment="Left" Margin="268,20,0,0" 
+                    		VerticalAlignment="Top" Width="100" Height="35" Click="BACTIVARLECTOR_Click" 
+                    		MouseEnter="BACTIVARLECTOR_MouseEnter" Cursor="Hand" TabIndex="5">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button x:Name="BNUEVO" Content="Nuevo cobro" HorizontalAlignment="Left" Margin="373,20,0,0"
+                    		VerticalAlignment="Top" Width="100" Height="35" IsEnabled="False" Cursor="Hand" MouseEnter="BACTIVARLECTOR_MouseEnter" 
+                                Click="BNUEVO_Click">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button Cursor="Hand" x:Name="cmdAtras" Click="cmdAtras_Click" Content=" &lt;&lt; Atras" 
+                    		HorizontalAlignment="Left" Height="35" Margin="31,20,0,0" VerticalAlignment="Top" Width="100">
+                        </Button>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+</Page>

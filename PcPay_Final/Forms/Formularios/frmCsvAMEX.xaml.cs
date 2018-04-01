@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace PcPay.Forms.formularios
+{
+    /// <summary>
+    /// Interaction logic for frmCsvAMEX.xaml
+    /// </summary>
+    public partial class frmCsvAMEX : Window
+    {
+        public frmCsvAMEX()
+        {
+            InitializeComponent();
+        }
+
+        private void cmdAceptar_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtCsv.Text.Length == 4)
+            {
+                Globales.csvAmexenBanda = txtCsv.Text;
+                Close();
+                return;
+            }
+            else {
+                Globales.MessageBoxMit("El csv deb e ser de 4 caracteres");
+                txtCsv.Focus();
+            }
+        }
+
+        private void cmdCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            Globales.csvAmexenBanda = "";
+            Globales.CloseFr = false;
+            Close();
+        }
+
+        private void cargarVentana(object sender, RoutedEventArgs e)
+        {
+            Globales.csvAmexenBanda = "";
+
+        }
+
+        private void soloNumero(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+    }
+}

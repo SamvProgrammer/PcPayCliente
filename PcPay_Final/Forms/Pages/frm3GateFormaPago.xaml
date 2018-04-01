@@ -1,0 +1,22 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frm3GateFormaPago"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" d:DesignWidth="300"
+	Title="frm3GateFormaPago" Height="97">
+
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="121*"/>
+            <ColumnDefinition Width="116*"/>
+            <ColumnDefinition Width="45*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="CmdAceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="59,56,0,0" VerticalAlignment="Top" Width="92" Height="29" Grid.Column="3" Grid.ColumnSpan="2" Click="CmdAceptar_Click"/>
+        <RadioButton IsChecked="True" x:Name="OptTarjeta" Content="Cobrar con tarjeta" HorizontalAlignment="Left" Margin="5,34,0,0" VerticalAlignment="Top" Grid.Column="2" GroupName="Op" />
+        <RadioButton x:Name="OptEfectivo" Content="Cobrar en efectivo" HorizontalAlignment="Left" Margin="5,64,0,0" VerticalAlignment="Top" Grid.Column="2" GroupName="Op"/>
+
+    </Grid>
+</Page>

@@ -1,0 +1,53 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmVtaSrvSeleccionar"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" VerticalAlignment="Top" HorizontalAlignment="Left"
+      d:DesignHeight="400" d:DesignWidth="775"
+	Title="frmVtaSrvSeleccionar" Background="white" Loaded="cargandoVentana">
+    <Page.Resources>
+        <Style TargetType="Label" >
+            <Setter Property="Foreground" Value="#B40404"></Setter>
+        </Style>
+
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="LTITTULO" Content="{}{*********}" Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="30,10,0,0" Width="745" />
+
+        <Button x:Name="BSALIR" Margin="0,12,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+            <Button.Background>
+                <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+            </Button.Background>
+        </Button>
+        <Border x:Name="fraCategoria" Margin="5,89,5,51" Grid.RowSpan="2">
+            <Grid >
+                <Label HorizontalAlignment="Stretch" Content="Seleccionar categoría" Margin="85,10,185,0" Style="{DynamicResource labelMitStyle}" Foreground="#FFE68779" FontWeight="SemiBold"/>
+                <ComboBox x:Name="CboCategoria" SelectionChanged="cambiaCategoria" HorizontalAlignment="Left" Margin="116,52,0,0" VerticalAlignment="Top" Width="332" Height="29"/>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" x:Name="fraProducto" Visibility="Hidden" Margin="5,84,5,34" Grid.RowSpan="2">
+            <Grid>
+                <Button x:Name="CmdAceptar" Cursor="Hand" Click="aceptarProducto" Content="Aceptar" HorizontalAlignment="Left" Margin="343,94,0,0" VerticalAlignment="Top" Width="105" Height="32"/>
+                <Label HorizontalAlignment="Stretch" Content="Seleccionar producto" Margin="93,10,177,0" Style="{DynamicResource labelMitStyle}" Foreground="#FFE68779" FontWeight="SemiBold"/>
+                <ComboBox  x:Name="CboProductos" HorizontalAlignment="Left" Margin="119,46,0,0" VerticalAlignment="Top" Width="329" Height="27">
+                </ComboBox>
+            </Grid>
+        </Border>
+        <Border Grid.Row="0" x:Name="PicSeleccionar" Visibility="Hidden">
+            <Grid>
+                <Label Content="Seleccione una opcion" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Width="207"/>
+                <RadioButton x:Name="OptEfectivo" Content="Cobrar con efectivo" HorizontalAlignment="Left" Margin="25,50,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="OptTarjeta" Content="Cobrar con tarjeta" HorizontalAlignment="Left" Margin="25,70,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="cmdContinuar" Content="Continuar" HorizontalAlignment="Left" Margin="280,87,0,0" VerticalAlignment="Top" Width="75" Height="21"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

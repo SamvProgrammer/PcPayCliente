@@ -1,0 +1,64 @@
+﻿<Window x:Class="PcPay.Forms.Formularios.frmReaderDigest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Introduzca la referencia" Height="181.438" Width="667.022"  WindowStartupLocation="CenterOwner" WindowStyle="None">
+    <Grid>
+        <Label Style="{DynamicResource labelMitStyle}"  Margin="40,15,0,0">Cuenta RDM</Label>
+        <Label Style="{DynamicResource labelMitStyle}"  Margin="228,15,0,0">DV</Label>
+        <Label Style="{DynamicResource labelMitStyle}"  Margin="335,15,0,0">Ord.</Label>
+        <Label Style="{DynamicResource labelMitStyle}"  Margin="437,15,0,0">Det</Label>
+        <Label Style="{DynamicResource labelMitStyle}" Margin="40,76,0,0">Prod</Label>
+        <Label Style="{DynamicResource labelMitStyle}"  Margin="228,76,0,0">Teléfono</Label>
+        <Grid HorizontalAlignment="Left" Height="32               " Margin="39,36,0,0" VerticalAlignment="Top" Width="184" Background="White">
+            <Border Style="{DynamicResource imgBorderMit}">
+                <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+            </Border>
+            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                <TextBox TextChanged="txtRDM0_TextChanged" PreviewTextInput="numero" MaxLength="10" x:Name="txtRDM0" Style="{DynamicResource mitStyleText2}"></TextBox>
+            </Border>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="32               " Margin="228,36,0,0" VerticalAlignment="Top" Width="100" Background="White">
+            <Border Style="{DynamicResource imgBorderMit}">
+                <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+            </Border>
+            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                <TextBox IsEnabled="False" x:Name="lblDv" Style="{DynamicResource mitStyleText2}"></TextBox>
+            </Border>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="32               " Margin="333,36,0,0" VerticalAlignment="Top" Width="99" Background="White">
+            <Border Style="{DynamicResource imgBorderMit}">
+                <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+            </Border>
+            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                <TextBox TextChanged="txtRDM0_TextChanged" PreviewTextInput="numero" MaxLength="3" x:Name="txtRDM1" Style="{DynamicResource mitStyleText2}"></TextBox>
+            </Border>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="32               " Margin="437,36,0,0" VerticalAlignment="Top" Width="212" Background="White">
+            <Border Style="{DynamicResource imgBorderMit}">
+                <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+            </Border>
+            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                <TextBox TextChanged="txtRDM0_TextChanged" PreviewTextInput="numero" MaxLength="2" x:Name="txtRDM2" Style="{DynamicResource mitStyleText2}"></TextBox>
+            </Border>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="32               " Margin="39,97,0,0" VerticalAlignment="Top" Width="184" Background="White">
+            <Border Style="{DynamicResource imgBorderMit}">
+                <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+            </Border>
+            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                <TextBox TextChanged="txtRDM0_TextChanged" PreviewTextInput="numero" MaxLength="2" x:Name="txtRDM3" Style="{DynamicResource mitStyleText2}"></TextBox>
+            </Border>
+        </Grid>
+        
+        <Grid HorizontalAlignment="Left" Height="32               " Margin="228,97,0,0" VerticalAlignment="Top" Width="204" Background="White">
+            <Border Style="{DynamicResource imgBorderMit}">
+                <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+            </Border>
+            <Border  Style="{DynamicResource ResourceKey=textBorderMit}" >
+                <TextBox TextChanged="txtRDM0_TextChanged" PreviewTextInput="numero" MaxLength="10" x:Name="txtRDM4" Style="{DynamicResource mitStyleText2}"></TextBox>
+            </Border>
+        </Grid>
+        <Button x:Name="cmdAceptar" Click="Button_Click" Content="Aceptar" HorizontalAlignment="Left" Margin="496,97,0,0" VerticalAlignment="Top" Width="102" Height="32"/>
+
+    </Grid>
+</Window>

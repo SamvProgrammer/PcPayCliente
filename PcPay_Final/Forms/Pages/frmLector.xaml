@@ -1,0 +1,70 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmLector"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" Background="White"
+      mc:Ignorable="d"  Loaded="Page_Loaded" VerticalAlignment="Top" HorizontalAlignment="Left"
+      d:DesignHeight="460" d:DesignWidth="770"
+	Title="frmLector">
+    <Page.Resources>
+        <Style TargetType="Border" x:Key="diseño">
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="Red"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="0,56,0,0">
+        <Label x:Name="LTITULO" Content="LECTOR"  Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="30,-52,0,0" Width="740" />
+
+        <Button x:Name="BSALIR" Margin="0,-50,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+            <Button.Background>
+                <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+            </Button.Background>
+        </Button>
+        <Border>
+            <Grid>
+                <Border Style="{DynamicResource diseño}" HorizontalAlignment="Left" Height="275" Margin="27,10,0,0" VerticalAlignment="Top" Width="508">
+                    <Grid  x:Name="frmMedioImp">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="203*"></RowDefinition>
+                            <RowDefinition Height="72*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <RadioButton x:Name="optMSR" Content="MSR" HorizontalAlignment="Left" Margin="10,27,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                        <RadioButton x:Name="optMagtek" Content="Magtek" HorizontalAlignment="Left" Margin="82,27,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                        <Label Foreground="Black" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="256" Height="132">
+                            <TextBlock x:Name="lblDatos" TextWrapping="Wrap">Lector</TextBlock>
+                        </Label>
+                        <Label Content="Otras opciones" HorizontalAlignment="Left" Margin="10,170,0,0" VerticalAlignment="Top"/>
+
+                    </Grid>
+                </Border>
+                <Label Visibility="Hidden" HorizontalAlignment="Left" Margin="540,54,0,0" VerticalAlignment="Top" Width="196" Height="152">
+                    <TextBlock Visibility="Hidden" x:Name="lblNd" TextWrapping="Wrap" >Espere...<LineBreak/>Configurando Dispositivo, esta operacion puede tardar varios<LineBreak/>minutos</TextBlock>
+                </Label>
+                <Label FontSize="20" x:Name="lblMasInfo" Content="Mas info" HorizontalAlignment="Left" Margin="540,225,0,0" VerticalAlignment="Top" Width="111"/>
+
+                <Grid x:Name="pctClic2" HorizontalAlignment="Left" Height="32               " Margin="540,308,0,0" VerticalAlignment="Top" Width="196" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox x:Name="pctClic" Style="{DynamicResource mitStyleText2}"/>
+                    </Border>
+                </Grid>
+                <Button Click="cmdOk_Click" x:Name="cmdOk" Content="Aceptar" HorizontalAlignment="Left" Margin="562,74,0,0" VerticalAlignment="Top" Width="130" Height="42"/>
+                <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="4" Grid.RowSpan="2" d:IsLocked="True"/>
+                <Button x:Name="clic" Click="Button_Click" Foreground="Blue" Background="Transparent" Content="Clic aquí" HorizontalAlignment="Left" Height="23" Margin="568,262,0,0" VerticalAlignment="Top" Width="66" BorderThickness="0" FontStyle="Italic"/>
+                <Button Click="cmdActualizar_Click" x:Name="cmdActualizar" Content="Actualizar" HorizontalAlignment="Left" Margin="562,164,0,0" VerticalAlignment="Top" Width="130" Height="42"/>
+            </Grid>
+
+        </Border>
+    </Grid>
+
+</Page>

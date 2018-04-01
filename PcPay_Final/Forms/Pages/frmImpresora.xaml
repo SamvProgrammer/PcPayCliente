@@ -1,0 +1,120 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmImpresora"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  Background="White"
+      mc:Ignorable="d" Loaded="Page_Loaded" VerticalAlignment="Top" HorizontalAlignment="Left"
+      d:DesignHeight="460" d:DesignWidth="775"
+	Title="Escoger impresora">
+
+    <Border>
+        <Grid>
+            <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="4" Grid.RowSpan="2" d:IsLocked="True"/>
+            <Label x:Name="LTITTULO" Content="{}{*********}" Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="30,10,0,0" Width="745" />
+
+            <Button x:Name="BSALIR" Margin="0,12,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+                <Button.Background>
+                    <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                </Button.Background>
+            </Button>
+
+
+            <Button Cursor="Hand" Click="Button_Click" Content="Aceptar" HorizontalAlignment="Left" Margin="87,349,0,0" VerticalAlignment="Top" Width="184" Height="50"/>
+            <RadioButton FontSize="20"  Click="radio" IsChecked="True" x:Name="optNinguno" Content="Otro dispositivo" HorizontalAlignment="Left" Margin="42,91,0,0" VerticalAlignment="Top"/>
+            <RadioButton Click="radio" x:Name="optHTML1" Content="HTML(1 por hoja)" HorizontalAlignment="Left" Margin="42,117,0,0" VerticalAlignment="Top"/>
+            <RadioButton Click="radio" x:Name="optHTML" Content="HTML(2 por hoja)" HorizontalAlignment="Left" Margin="42,143,0,0" VerticalAlignment="Top"/>
+            <RadioButton Click="radio" x:Name="optTermino" Content="Térmico" HorizontalAlignment="Left" Margin="42,169,0,0" VerticalAlignment="Top"/>
+            <RadioButton Click="radio" x:Name="optEpson" Content="Impresora plug &amp; play" HorizontalAlignment="Left" Margin="42,195,0,0" VerticalAlignment="Top"/>
+            <RadioButton Click="radio" x:Name="optEpson2" Content="Impresora manual" HorizontalAlignment="Left" Margin="42,221,0,0" VerticalAlignment="Top"/>
+
+            <CheckBox Visibility="Hidden"  Content="" HorizontalAlignment="Left" Margin="159,49,0,0" VerticalAlignment="Top"/>
+            <Grid Visibility="Visible" x:Name="frmescape" HorizontalAlignment="Left" Height="381" Margin="370,49,0,0" VerticalAlignment="Top" Width="396">
+
+                <ComboBox Style="{DynamicResource comboboxMitStyle}" x:Name="combo1" HorizontalAlignment="Left" Margin="21,10,0,0" VerticalAlignment="Top" Width="196" Height="27" SelectionChanged="combo1_SelectionChanged"/>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="lblEC" Content="Escape Codes General" HorizontalAlignment="Left" Margin="25,50,0,0" VerticalAlignment="Top" Height="20" Width="149"/>
+
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="25,75,0,0" VerticalAlignment="Top" Width="179" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{DynamicResource mitStyleText2}" x:Name="txtEC" />
+                    </Border>
+                </Grid>
+
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="label3" Content="Escape Codes Margen Izquierdo" HorizontalAlignment="Left" Margin="25,112,0,0" VerticalAlignment="Top" Height="21" Width="216"/>
+
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="25,133,0,0" VerticalAlignment="Top" Width="179" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{DynamicResource mitStyleText2}" x:Name="txtECMI" />
+                    </Border>
+                </Grid>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="lblECC" Content="Escape Margen Derecho" HorizontalAlignment="Left" Margin="25,173,0,0" VerticalAlignment="Top" Height="21" Width="163"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="25,194,0,0" VerticalAlignment="Top" Width="179" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{DynamicResource mitStyleText2}" x:Name="txtECC"  />
+                    </Border>
+                </Grid>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="lblECL" Content="Escape Codes Leyenda" HorizontalAlignment="Left" Margin="209,173,0,0" VerticalAlignment="Top" Height="21" Width="153"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="209,194,0,0" VerticalAlignment="Top" Width="179" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{DynamicResource mitStyleText2}" x:Name="txtECL"/>
+                    </Border>
+                </Grid>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="label4" Content="Escape Codes Alineación" HorizontalAlignment="Left" Margin="209,241,0,0" VerticalAlignment="Top" Height="21" Width="166"/>
+
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="209,267,0,0" VerticalAlignment="Top" Width="179" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{DynamicResource mitStyleText2}" x:Name="txtECA" />
+                    </Border>
+                </Grid>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="label2" Content="Escape Codes Corte" HorizontalAlignment="Left" Margin="25,241,0,0" VerticalAlignment="Top" Height="21" Width="135"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="25,267,0,0" VerticalAlignment="Top" Width="179" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{DynamicResource mitStyleText2}" x:Name="txtECCte"/>
+                    </Border>
+                </Grid>
+
+                <CheckBox FontSize="14" x:Name="chkUnaHojaManual" Content="Imprimir sólo una copia" HorizontalAlignment="Left" Margin="206,82,0,0" VerticalAlignment="Top" Height="25" Width="169"/>
+                <Image ToolTip="Marque la casilla para imprimir una vez el voucher" Source="/PcPay;component/Disenio/Images/help.PNG" HorizontalAlignment="Left" Height="25" Margin="375,82,0,0" VerticalAlignment="Top" Width="21"/>
+                <Image ToolTip="Da clic en la imagen para ver los Escape Codes" MouseDown="Image_MouseDown" Source="/PcPay;component/Disenio/Images/help.png" HorizontalAlignment="Left" Height="25" Margin="375,107,0,0" VerticalAlignment="Top" Width="21"/>
+
+            </Grid>
+            <Grid Visibility="Visible" x:Name="frmImpresoraPlug" HorizontalAlignment="Left" Height="79" Margin="29,265,0,0" VerticalAlignment="Top" Width="365">
+                
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="10,28,0,0" VerticalAlignment="Top" Width="169" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox x:Name="txtFont" Style="{DynamicResource mitStyleText2}" CharacterCasing="Upper" />
+                    </Border>
+                </Grid>
+
+                <Label Style="{DynamicResource labelMitStyle}" Content="Font:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+                <RadioButton x:Name="chkUnaHoja" Content="Solo una copia" HorizontalAlignment="Left" Margin="184,33,0,0" VerticalAlignment="Top"/>
+                <Image ToolTip="Marque la casilla si desea imprimir una sola vez el voucher" Source="/PcPay;component/Disenio/Images/help.png" HorizontalAlignment="Left" Height="25" Margin="303,34,0,0" VerticalAlignment="Top" Width="21"/>
+            </Grid>
+            <CheckBox Content="" x:Name="chkImp" HorizontalAlignment="Left" Margin="196,123,0,0" VerticalAlignment="Top"/>
+            <Image ToolTip="Marque la casilla si quiere imprimir automáticamente el voucher" Source="/PcPay;component/Disenio/Images/help.png" HorizontalAlignment="Left" Height="25" Margin="224,120,0,0" VerticalAlignment="Top" Width="21"/>
+
+        </Grid>
+    </Border>
+</Page>

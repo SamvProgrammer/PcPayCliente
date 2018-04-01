@@ -1,0 +1,64 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="PcPay.Forms.frmMenuPrincipal"
+        Title="Centro de Pagos" Height="650" Width="950" MinHeight="650" MaxWidth="950" MinWidth="950"
+        Closed="Window_Closed" Closing="Window_Closing" Icon="/PcPay;component/PcPay.ico" MaxHeight="650" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp" Loaded="Window_Loaded" ResizeMode="CanMinimize" AllowsTransparency="False">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid Margin="0">
+
+        <Frame x:Name="ventanaDisplay" Background="White" 
+			NavigationUIVisibility="Hidden" BorderBrush="#FFECEAEA" BorderThickness="0" Margin="0,75,10,50" Width="940" Grid.ColumnSpan="2" IsTabStop="False" />
+        <Grid HorizontalAlignment="Left" Height="70" Margin="1,0,0,0" VerticalAlignment="Top" Width="941" Grid.ColumnSpan="2" Background="#4CD3D3D3">
+            <Grid x:Name="BADELANTE" HorizontalAlignment="Right" Height="70" Margin="0,0,10,0" VerticalAlignment="Top" Width="20" Cursor="Hand">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/PcPay;component/Resources/right.png"/>
+                </Grid.Background>
+            </Grid>
+            <StackPanel x:Name="SPMENUOPCIONES" Height="70" VerticalAlignment="Top" Orientation="Horizontal" Margin="25,0,30,0" Width="885">
+                <Grid Style="{DynamicResource gridMenuMit}" >
+                    <Grid.Effect>
+                        <DropShadowEffect/>
+                    </Grid.Effect>
+                    <Image Style="{DynamicResource imgMenuMit}"/>
+                    <TextBlock  Text="Administracion" Style="{DynamicResource textMenuMit}" Height="Auto" VerticalAlignment="Stretch" Margin="5,30,0,0"/>
+                </Grid>
+            </StackPanel>
+            <Grid x:Name="BATRAS" HorizontalAlignment="Left" Height="70" Margin="2,0,0,0" VerticalAlignment="Top" Width="20" Cursor="Hand">
+                <Grid.Background>
+                    <ImageBrush ImageSource="/PcPay;component/Resources/left.png"/>
+                </Grid.Background>
+            </Grid>
+        </Grid>
+        <Image x:Name="IADQUIRIENTE" HorizontalAlignment="Right" Height="50" Margin="0,0,10,70" VerticalAlignment="Bottom" Width="125" />
+
+        <Image    x:Name="ILOGO" HorizontalAlignment="Right" Height="88" Margin="0,70,10,0" VerticalAlignment="Top" Width="154" />
+        <Grid Margin="0" AllowDrop="True" Background="#FF0C4375" Height="50" VerticalAlignment="Bottom" Grid.ColumnSpan="2">
+            <Label x:Name="LNAME" Content="{}{000000000}" Margin="0,1,572,0" Foreground="White" FontSize="14" Height="23" VerticalAlignment="Top" HorizontalAlignment="Right" Width="305" Padding="1" VerticalContentAlignment="Center" FontFamily="Trebuchet MS"/>
+            <Label x:Name="LSUCURSAL" Content="SUC: {0}" HorizontalAlignment="Right" Margin="0,1,188,0" Foreground="White" FontSize="13" Width="329" Height="23" VerticalAlignment="Top" FontFamily="Trebuchet MS" VerticalContentAlignment="Center"/>
+            <Label x:Name="LEMPRESA" Content="EMP: {0}" HorizontalAlignment="Right" Margin="0,25,188,0" Foreground="White" FontSize="13" Width="329" Height="23" VerticalAlignment="Top" FontFamily="Trebuchet MS"/>
+            <Label x:Name="LUSER" Content="{}{000000000}" Margin="0,25,741,0" Foreground="White" FontSize="14" Height="23" VerticalAlignment="Top" HorizontalAlignment="Right" Width="136" Padding="1" VerticalContentAlignment="Center" FontFamily="Trebuchet MS"/>
+            <Border BorderBrush="White" BorderThickness="0,0,1,0" Height="35" VerticalAlignment="Top" Margin="0,10,888,0" HorizontalAlignment="Right" Width="39">
+                <Image Margin="0,0,-1,-1" Source="/PcPay;component/Resources/mitUser.png" RenderTransformOrigin="-1.15,0.5" HorizontalAlignment="Left" Width="35"/>
+            </Border>
+            <Border BorderBrush="White" BorderThickness="0,0,1,0" Height="35" VerticalAlignment="Top" Margin="0,10,528,0" HorizontalAlignment="Right" Width="39">
+                <Image Margin="0,0,-1,-1"  RenderTransformOrigin="-1.15,0.5" HorizontalAlignment="Left" Width="35"/>
+            </Border>
+            <Image Height="48" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="204" Source="/PcPay;component/Resources/logo_mit.png"/>
+        </Grid>
+        <Grid x:Name="GMODAL" Background="#7FFFFFFF" MouseDown="GMODAL_MouseDown" d:IsHidden="True"/>
+
+        <StackPanel MouseLeave="mouseLeave_Principal" MouseEnter="mouseEnter_Principal"  MouseDown="SPSUBMENUS_MouseDown" x:Name="SPSUBMENUS"  Background="#FF0C4375" HorizontalAlignment="Left" Width="250" Margin="0,75,0,55">
+            <StackPanel.Effect>
+                <DropShadowEffect Color="#FF080808" Direction="320" ShadowDepth="8"/>
+            </StackPanel.Effect>
+            <Button Content="OPTION EXAMPLE" Style="{DynamicResource subMenuBtnMit}"/>
+        </StackPanel>
+        <Label x:Name="lblLector" Content="Espere buscando lector..." FontSize="16" FontStretch="Expanded" Foreground="Red" FontWeight="Bold" Height="33" Margin="10,532,534,0" VerticalAlignment="Top" d:IsHidden="True"/>
+        <Image  x:Name="santander" HorizontalAlignment="Left" Height="44" Margin="780,158,0,0" VerticalAlignment="Top" Width="148"/>
+
+
+    </Grid>
+</Window>

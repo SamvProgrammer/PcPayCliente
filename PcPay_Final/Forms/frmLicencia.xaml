@@ -1,0 +1,209 @@
+﻿<Window x:Class="PcPay.Forms.frmLicencia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xml:space="preserve"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  ResizeMode="NoResize"
+        Title="Configuracion de pagos mit" Height="500" Width="644.776" WindowStartupLocation="CenterScreen" Closing="Window_Closing" Loaded="Window_Loaded" Icon="/PcPay;component/PcPay.ico" ShowInTaskbar="False" >
+    <DockPanel>
+        <Grid DockPanel.Dock="Bottom" Height="50" Background="LightGray">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Width="100" x:Name="btnAyuda" Grid.Column="0" Click="CmdNav" Margin="10,8,72,7">Ayuda</Button>
+            <Button Width="100" x:Name="btnCancelar" Click="CmdNav" Grid.ColumnSpan="2" Margin="147,8,26,7" >Cancelar</Button>
+            <Button Width="100" x:Name="btnAnterior" Click="CmdNav" Grid.Column="1" IsEnabled="False"  Grid.ColumnSpan="2" Margin="70,8,12,7">Anterior</Button>
+            <Button Width="Auto" x:Name="btnSiguiente"  Click="CmdNav" Grid.Column="2"  Grid.ColumnSpan="3" Margin="84,8,89,7">Siguiente</Button>
+            <Button Width="100" x:Name="btnFinalizar" Click="CmdNav" Grid.Column="4" IsEnabled="False"  Grid.ColumnSpan="2" Margin="72,8,10,7" >Finalizar</Button>
+        </Grid>
+        <Grid DockPanel.Dock="Top" >
+            <Grid.Background>
+                <ImageBrush ImageSource="/PcPay;component/disenio/images/pantalla.jpg"></ImageBrush>
+            </Grid.Background>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <!--Empieza los grid de la configuracion-->
+            <Grid  Margin="182,10,10,10" Background="White"  x:Name="primero" Visibility="Hidden" Grid.ColumnSpan="2" >
+                <Label Foreground="#DF0101" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="427" Height="42" TextBlock.FontSize="20" FontWeight="Bold">
+                    <TextBlock TextWrapping="Wrap" FontFamily="MS Office Symbol Regular" FontWeight="Bold">Asistente de configuración de pagos MIT</TextBlock>
+                </Label>
+                <Label HorizontalAlignment="Left" Margin="49,108,0,0" VerticalAlignment="Top" Width="365" Height="72" RenderTransformOrigin="0.466,0.281" TextBlock.FontSize="10">
+                    <TextBlock TextWrapping="Wrap" FontFamily="MS Office Symbol Regular" FontSize="12" >El asistente le ayudará a configurar pagos MIT en su equipo. Para continuar haga clic en siguiente</TextBlock>
+                </Label>
+               <Label  FontSize="17"  Margin="10,328,0,0"  Width="421" Height="61" Background="#FF264A6C" Foreground="White" >
+                    <TextBlock Height="51" Width="411"><Run Text="Soporte y Asistencia técnica"/><LineBreak/><Run FontWeight="Bold" Text="teléfono (55)1200-9000 soporte@mitec.com.mx"/></TextBlock>
+                </Label>
+
+            </Grid>
+            <!--Segundo...***********************************-->
+            <Grid Margin="182,10,10,10" Background="White"  x:Name="segundo" Visibility="Hidden" Grid.ColumnSpan="2">
+                <Label Foreground="#DF0101" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="427" Height="42" TextBlock.FontSize="20">
+                    <TextBlock TextWrapping="Wrap" FontFamily="MS Office Symbol Regular">Asistente de configuración de pagos MIT</TextBlock>
+                </Label>
+                <Label Content="Usuario" HorizontalAlignment="Left" Margin="52,158,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="126,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.483,0.522"/>
+                <Label Content="Contaseña" HorizontalAlignment="Left" Margin="52,207,0,0" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="126,207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.483,0.522"/>
+               <Label  FontSize="17"  Margin="10,328,0,0"  Width="421" Height="61" Background="#FF264A6C" Foreground="White" >
+                    <TextBlock Height="51" Width="411"><Run Text="Soporte y Asistencia técnica"/><LineBreak/><Run FontWeight="Bold" Text="teléfono (55)1200-9000 soporte@mitec.com.mx"/></TextBlock>
+                </Label>
+
+
+            </Grid>
+            <!--Tercero......................-->
+            <Grid   Margin="182,10,10,10" Background="White"  x:Name="tercero" Visibility="Hidden" Grid.ColumnSpan="2" >
+                <Label Foreground="#DF0101" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="427" Height="42" TextBlock.FontSize="20">
+                    <TextBlock TextWrapping="Wrap" FontFamily="MS Office Symbol Regular">Asistente de configuración de pagos MIT</TextBlock>
+                </Label>
+               
+                <Label  Margin="-38,118,134,0" VerticalAlignment="Top" Width="351" FontFamily="MS Office Symbol Regular">
+                    A continuación se muestra el lector conectado
+                </Label>
+                <TextBox TextAlignment="Left"  HorizontalAlignment="Left" Height="145" Margin="31,155,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="356" x:Name="txtLector">
+                  No hay ningun lector conectado..
+                </TextBox>
+ <Label  FontSize="17"  Margin="10,328,0,0"  Width="421" Height="61" Background="#FF264A6C" Foreground="White" >
+                    <TextBlock Height="51" Width="411"><Run Text="Soporte y Asistencia técnica"/><LineBreak/><Run FontWeight="Bold" Text="teléfono (55)1200-9000 soporte@mitec.com.mx"/></TextBlock>
+                </Label>
+            </Grid>
+            <!--Cuarto-->
+            <Grid  Margin="182,10,10,10" Background="White"  x:Name="cuarto" Visibility="Visible" Grid.ColumnSpan="2">
+                <Label Foreground="#DF0101" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="427" Height="42" TextBlock.FontSize="20">
+                    <TextBlock TextWrapping="Wrap" FontFamily="MS Office Symbol Regular">Asistente de configuración de pagos MIT</TextBlock>
+                </Label>
+
+                <Label  FontSize="17"  Margin="10,328,0,0"  Width="421" Height="61" Background="#FF264A6C" Foreground="White" >
+                    <TextBlock Height="51" Width="411"><Run Text="Soporte y Asistencia técnica"/><LineBreak/><Run FontWeight="Bold" Text="teléfono (55)1200-9000 soporte@mitec.com.mx"/></TextBlock>
+                </Label>
+                <Label Visibility="Visible" x:Name="lblLabels2" HorizontalAlignment="Center"   Margin="51,101,26,0" VerticalAlignment="Top" Width="370" FontFamily="MS Office Symbol Regular">
+                    <TextBlock TextWrapping="Wrap" >Para comprobar que su dispositivo funciona correctamente, haga clic en el botón probar</TextBlock>
+                </Label>
+                <Button Content="Probar Lector" Click="probarClick" IsEnabled="True" x:Name="cmdTest" HorizontalAlignment="Left" Margin="162,252,0,0" VerticalAlignment="Top" Width="115"/>
+                <Label Visibility="Visible" x:Name="lbTestVX"  Margin="45,170,26,0" VerticalAlignment="Top" Height="72">
+                    <TextBlock TextWrapping="Wrap" FontFamily="MS Office Symbol Regular" Height="53">Se imprimira un voucher de prueba comprobando que su lector está funcionando correctamente.</TextBlock>
+                </Label>
+                <Label Visibility="Visible" x:Name="lblTestIgenico" FontSize="9" HorizontalAlignment="Left" Margin="45,171,0,0" VerticalAlignment="Top" Width="367" Height="76">
+                    <TextBlock TextWrapping="Wrap" FontFamily="MS Office Symbol Regular" FontSize="11" TextAlignment="Justify">Si después de dar clic en el botón, se muestra la leyena "PcPay Listo!!" en la pantalla de su dispositivo, su lector esta funcionando correctamente, de lo contrario puede dar clic en el botón "Anterior" y configurar nuevamente su dispositivo, verifique que su dispositivo se encuentre conectado.</TextBlock>
+                </Label>
+            </Grid>
+
+            <!--Quinto*****************************************************-->
+
+            <Grid Margin="182,10,10,10" Background="White"  x:Name="quinto" Visibility="Hidden" Grid.ColumnSpan="2">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Foreground="#DF0101" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="216" Height="28" TextBlock.FontSize="14">
+                    <TextBlock TextWrapping="Wrap" FontFamily="MS Office Symbol Regular">Seleccione la impresora a utilizar</TextBlock>
+                </Label>
+                <StackPanel x:Name="opciones" Grid.Column="0" Margin="42,51,231,201" Grid.RowSpan="2" >
+                    <RadioButton Click="rd5_Click"  x:Name="rd1">Otro dispositivo</RadioButton>
+                    <RadioButton Click="rd5_Click"  x:Name="rd2">HTML(1 por hoja)</RadioButton>
+                    <RadioButton Click="rd5_Click" IsChecked="True" x:Name="rd3">HTML 2 (2 por hoja)</RadioButton>
+                    <RadioButton Click="rd5_Click" x:Name="rd4">Térmico</RadioButton>
+                    <RadioButton Click="rd5_Click" x:Name="rd5">impresora plug &amp; play</RadioButton>
+                    <RadioButton Click="rd5_Click" x:Name="rd6">Impresora manual</RadioButton>
+                </StackPanel>
+                <Grid Visibility="Hidden" x:Name="frmImpresoraPlug" HorizontalAlignment="Left" Height="64" Margin="42,113,0,0" VerticalAlignment="Top" Width="237" Grid.Row="1">
+                
+<Grid HorizontalAlignment="Left" Height="32               " Margin="10,28,0,0" VerticalAlignment="Top" Width="224" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+<TextBox Style="{DynamicResource mitStyleText2}" CharacterCasing="Upper" />
+                    </Border>
+                </Grid>
+
+                    <Label Style="{DynamicResource labelMitStyle}" Content="Font:" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top"/>
+                </Grid>
+                <Grid Visibility="Hidden" x:Name="gridManual" HorizontalAlignment="Left" Height="348" Margin="216,38,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="211">
+                	<ComboBox x:Name="combo1" HorizontalAlignment="Left" Height="25" Margin="9,0,0,0" VerticalAlignment="Top" Width="191"/>
+                	<Label Style="{DynamicResource labelMitStyle}" Content="Escape codes" HorizontalAlignment="Left" Height="16" Margin="11,25,0,0" VerticalAlignment="Top" Width="190"/>
+                	<Grid HorizontalAlignment="Left" Height="32               " Margin="12,41,0,0" VerticalAlignment="Top" Width="190" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{StaticResource mitStyleText2}"></TextBox>
+                    </Border>
+                </Grid>
+                	<Label Style="{DynamicResource labelMitStyle}" Content="Escape codes Margen Izq." HorizontalAlignment="Left" Height="15" Margin="10,78,0,0" VerticalAlignment="Top" Width="190"/>
+                    <Grid HorizontalAlignment="Left" Height="32               " Margin="10,94,0,0" VerticalAlignment="Top" Width="190" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{StaticResource mitStyleText2}"></TextBox>
+                    </Border>
+                </Grid>
+                    <Label Style="{DynamicResource labelMitStyle}" Content="Escape codes Margen der." HorizontalAlignment="Left" Height="17" Margin="10,131,0,0" VerticalAlignment="Top" Width="190"/>
+                    <Grid HorizontalAlignment="Left" Height="32               " Margin="10,148,0,0" VerticalAlignment="Top" Width="190" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{StaticResource mitStyleText2}"></TextBox>
+                    </Border>
+                </Grid>
+                    <Label Style="{DynamicResource labelMitStyle}" Content="Escape codes leyenda" HorizontalAlignment="Left" Height="15" Margin="10,185,0,0" VerticalAlignment="Top" Width="190"/>
+                    <Grid HorizontalAlignment="Left" Height="32               " Margin="10,200,0,0" VerticalAlignment="Top" Width="190" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{StaticResource mitStyleText2}"></TextBox>
+                    </Border>
+                </Grid>
+                    <Label Style="{DynamicResource labelMitStyle}" Content="Escape codes corte" HorizontalAlignment="Left" Height="16" Margin="10,237,0,0" VerticalAlignment="Top" Width="190"/>
+                    <Grid HorizontalAlignment="Left" Height="32               " Margin="10,253,0,0" VerticalAlignment="Top" Width="190" Background="White">
+                    	<Grid.ColumnDefinitions>
+                    		<ColumnDefinition Width="61*"/>
+                    		<ColumnDefinition Width="34*"/>
+                    	</Grid.ColumnDefinitions>
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" Grid.ColumnSpan="2" >
+                        <TextBox Style="{StaticResource mitStyleText2}"></TextBox>
+                    </Border>
+                </Grid>
+                    <Label Style="{DynamicResource labelMitStyle}" Content="Escape codes alineación" HorizontalAlignment="Left" Height="16" Margin="10,290,0,0" VerticalAlignment="Top" Width="190"/>
+                    <Grid HorizontalAlignment="Left" Height="32               " Margin="10,306,0,0" VerticalAlignment="Top" Width="190" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{StaticResource mitStyleText2}"></TextBox>
+                    </Border>
+                </Grid>
+                    
+                </Grid>
+                <CheckBox Visibility="Visible" x:Name="chkimp" Content="" HorizontalAlignment="Left" Margin="206,18,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <Image Visibility="Visible" Cursor="Hand" x:Name="image6" ToolTip="Marque la casilla si quiere imprimir automáticamente el voucher." Source="/PcPay;component/Disenio/Images/help.png" HorizontalAlignment="Left" Height="15" Margin="226,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="18"/>
+                <Image Visibility="Hidden" x:Name="image7" MouseDown="image7_MouseDown" ToolTip="Dar Clic en la imagen para ver los Scape Codes" Source="/PcPay;component/Disenio/Images/help.png" HorizontalAlignment="Left" Height="15" Margin="42,118,0,0" Grid.Row="1" VerticalAlignment="Top" Width="18"/>
+                <Image Visibility="Hidden" x:Name="image8" ToolTip="Marque la casilla si quiere imprimir dos voucher por hoja" Source="/PcPay;component/Disenio/Images/help.png" HorizontalAlignment="Left" Height="15" Margin="42,138,0,0" Grid.Row="1" VerticalAlignment="Top" Width="18"/>
+                <CheckBox Visibility="Hidden" x:Name="chkNoVchr" Content="" HorizontalAlignment="Left" Margin="60,138,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            </Grid>
+            <!--sexto******************************************************-->
+            <Grid Margin="182,10,10,10" Background="White"  x:Name="sexto" Visibility="Hidden" Grid.ColumnSpan="2">
+                <Label Foreground="#DF0101" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="427" Height="42" TextBlock.FontSize="20" FontWeight="Bold">
+                    <TextBlock TextWrapping="Wrap" FontFamily="MS Office Symbol Regular" FontWeight="Bold">Asistente de configuración de pagos MIT</TextBlock>
+                </Label>
+                <Label  FontSize="17"  Margin="10,328,0,0"  Width="421" Height="61" Background="#FF264A6C" Foreground="White" >
+                    <TextBlock Height="51" Width="411"><Run Text="Soporte y Asistencia técnica"/><LineBreak/><Run FontWeight="Bold" Text="teléfono (55)1200-9000 soporte@mitec.com.mx"/></TextBlock>
+                </Label>
+                <Label  HorizontalAlignment="Left" Height="200" Margin="27,57,0,0" VerticalAlignment="Top" Width="404" FontFamily="MS Office Symbol Regular" FontSize="28" FontWeight="Bold">
+                    <TextBlock  TextWrapping="Wrap" Width="394" Height="190" FontStyle="Italic" FontWeight="Normal">El asistente ha configurado Pagos MIT correctamente en su equipo</TextBlock>
+                </Label>
+            </Grid>
+            <Label Content="Versión 11.0.1" x:Name="version" Foreground="White" HorizontalAlignment="Left" Height="27" Margin="10,384,0,0" VerticalAlignment="Top" Width="167"/>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,28 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="PcPay.Forms.Formularios.frmAvisoBanda"
+        WindowStartupLocation="CenterOwner"
+        Title="¡¡Aviso!!" Height="253.731" Width="513.313" Loaded="CargandoVentana" ResizeMode="NoResize" ShowInTaskbar="False" WindowStyle="None">
+    <Grid>
+        <Border BorderThickness="2" BorderBrush="#FF0C4375">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+            <Grid Background="White">
+
+                <Image HorizontalAlignment="Left" Height="205" Margin="10,10,0,0" Opacity=".15" VerticalAlignment="Top" Width="210" Source="/PcPay;component/Resources/info.png" d:IsLocked="True"/>
+                <Label Content="¡Importante!" Style="{DynamicResource lblTitleMit}" Margin="30,10,10,0" Width="Auto"/>
+                <Label Style="{DynamicResource ResourceKey=lblsubTitleMit}"   Margin="30,49,10,0" VerticalAlignment="Top"  Width="Auto" Height="112">
+                    <TextBlock TextWrapping="Wrap" x:Name="lblTip" Foreground="#FF0C4387" TextAlignment="Justify"><Run Text="etiqueta"/></TextBlock>
+                </Label>
+                <CheckBox Content="No volver a mostrar este mensaje" FontSize="15" x:Name="chk1" Margin="0,185,231,0" VerticalAlignment="Top" FontFamily="Trebuchet MS" HorizontalAlignment="Right" Width="246"/>
+                <Button Content="" Click="CerrarVentana" Margin="0,10,10,0" VerticalAlignment="Top" Height="30" RenderTransformOrigin="0.8,0.343" HorizontalAlignment="Right" Width="30" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                    </Button.Background>
+                </Button>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

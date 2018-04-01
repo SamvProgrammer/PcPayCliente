@@ -1,0 +1,99 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmImpresion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"  VerticalAlignment="Top"
+     
+	Title="frmImpresion" Background="white" Loaded="cargarVentana" Width="775" Height="465" HorizontalAlignment="Left" >
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="400*"/>
+        </Grid.RowDefinitions>
+
+        <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="4" Grid.RowSpan="2" d:IsLocked="True"/>
+
+        <Label x:Name="LTITULO" Content="Impresión"  Style="{DynamicResource lblTitleMit}" Margin="30,0,0,0" Width="Auto" Grid.Row="1" />
+
+        <Button x:Name="BSALIR" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Grid.Row="1" IsTabStop="False" Margin="0,2,2,0">
+            <Button.Background>
+                <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+            </Button.Background>
+        </Button>
+        <Grid x:Name="fraP2" ShowGridLines="True" Grid.Row="2" Height="285" VerticalAlignment="Top" >
+            <DataGrid x:Name="tabla" SelectionChanged="escogerTransaccion" Margin="30,10,10,0" VerticalAlignment="Top" Height="215" FontSize="13" FontFamily="Trebuchet MS" CanUserReorderColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Background="{x:Null}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding folio}"  Header="FOLIO" FontWeight="Medium" FontFamily="Trebuchet MS" IsReadOnly="True" Width="90" Foreground="#FF0C4375"/>
+                    <DataGridTextColumn Binding="{Binding reservacion}"  Header="FACTURA" IsReadOnly="True" Width="125"/>
+                    <DataGridTextColumn Binding="{Binding monto}" Header="MONTO" IsReadOnly="True" Width="130"/>
+                    <DataGridTextColumn Binding="{Binding fecha}"  Header="FECHA" IsReadOnly="True" Width="110" FontSize="10"/>
+                    <DataGridTextColumn Binding="{Binding cc_name}"  Header="CLIENTE" IsReadOnly="True" Width="200"/>
+                    <DataGridTextColumn Binding="{Binding tp_operacion}"  Header="OPERACION" IsReadOnly="True" Width="90" FontSize="10"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Cursor="Hand"  x:Name="cmdAceptar2" Click="cmdAceptar2Click" Content="Aceptar" HorizontalAlignment="Right" Margin="0,0,115,20"
+                    VerticalAlignment="Bottom" Width="100" Height="35" IsTabStop="False">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Cursor="Hand" x:Name="cmdCancelar2" Click="cmdCancelarClick" Content="Cancelar" Margin="0,0,10,20" VerticalAlignment="Bottom" Height="35"
+                    HorizontalAlignment="Right" Width="100" IsTabStop="False">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+
+        <Grid x:Name="fraP1"  Margin="0,0,0,0" IsHitTestVisible="True" Height="285" VerticalAlignment="Top" ScrollViewer.CanContentScroll="True" Grid.Row="2" d:IsHidden="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="37*"/>
+            </Grid.RowDefinitions>
+            <Label  Content="Introduzca los siguientes campos" Style="{DynamicResource lblsubTitleMit}" HorizontalAlignment="Left" Margin="30,0,0,0" Width="265"/>
+            <RadioButton IsChecked="True" Click="radio1Click" x:Name="optReservacion" Content="Referencia" HorizontalAlignment="Left" 
+                         Margin="30,20,0,0" VerticalAlignment="Top" FontWeight="Thin" Checked="optReservacion_Checked" Width="117" FontFamily="Trebuchet MS" Grid.Row="1" IsTabStop="False"/>
+            <RadioButton  Click="radio2Click" x:Name="optFolio" Content="Núm. Operación" HorizontalAlignment="Left" Margin="200,20,0,0" VerticalAlignment="Top" FontWeight="Thin" Checked="optFolio_Checked" FontFamily="Trebuchet MS" Grid.Row="1" IsTabStop="False"/>
+            <Label Style="{DynamicResource labelMitStyle}" Content="Referencia:" x:Name="lblReferencia" Margin="30,3,0,0" VerticalAlignment="Top"
+                    HorizontalAlignment="Left" Grid.Row="2" Width="202"/>
+            <Button Cursor="Hand" x:Name="cmdAceptar1" Click="aceptarClick" Content="Aceptar" Margin="0,20,212,0" VerticalAlignment="Top" Height="35" 
+                    HorizontalAlignment="Right" Width="75" Grid.Row="2" TabIndex="1">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Cursor="Hand" x:Name="cmdCancelar1" Click="cmdCancelarClick" Content="Cancelar" 
+                    HorizontalAlignment="Right" Margin="0,20,132,0" 
+                    VerticalAlignment="Top" Width="75" Height="35" Grid.Row="2" TabIndex="2" >
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Grid HorizontalAlignment="Left" Height="32               " Margin="30,20,0,0" VerticalAlignment="Top" Width="415" Background="White" Grid.Row="2">
+                <Border Style="{DynamicResource imgBorderMit}">
+                    <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                </Border>
+                <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                    <TextBox PreviewTextInput="txtReservacion_PreviewTextInput" KeyDown="sendEnter" CharacterCasing="Upper"
+                             LostFocus="txtReservacion_LostFocus" GotFocus="txtReservacionFocus"  x:Name="txtReservacion"  
+                             Style="{DynamicResource mitStyleText2}" TabIndex="0" MaxLength="40" />
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Page>

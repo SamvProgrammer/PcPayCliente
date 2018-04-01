@@ -1,0 +1,107 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmCuponBusqueda"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"  Background="White" VerticalAlignment="Top"
+      d:DesignHeight="460" d:DesignWidth="775" HorizontalAlignment="Left"
+      Width="775" Height="465"
+	Title="frmCuponBusqueda" Loaded="Page_Loaded">
+    <Page.Resources>
+    </Page.Resources>
+    <Grid>
+        <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="4" Grid.RowSpan="2" d:IsLocked="True"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10 "/>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="398*"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="LTITULO" Content="{}{*********}" Style="{DynamicResource lblTitleMit}" Margin="30,0,0,0" Width="Auto" Grid.Row="1" />
+
+            <Button x:Name="BSALIR" Margin="0,2,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Grid.Row="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                </Button.Background>
+            </Button>
+
+            <Grid Grid.Row="2">
+                <Border x:Name="frameBuscar" Visibility="Visible">
+                    <Grid>
+                        <Label x:Name="lblEtiqueta" Style="{DynamicResource labelMitStyle}" Content="Número de celular" HorizontalAlignment="Left" Margin="30,3,0,0" VerticalAlignment="Top" Width="223"/>
+                        <Grid HorizontalAlignment="Left" Height="32               " Margin="30,20,0,0" VerticalAlignment="Top" Width="403" Background="White">
+                            <Border Style="{DynamicResource imgBorderMit}">
+                                <Image Source="/PcPay;component/Resources/tel.png" Style="{DynamicResource imageStyleMit2}"/>
+                            </Border>
+                            <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                                <TextBox MaxLength="10" x:Name="txtTelefono" Style="{DynamicResource mitStyleText2}"/>
+                            </Border>
+                        </Grid>
+                        <Button Cursor="Hand" Click="cmdValidar_Click" x:Name="cmdValidar" Content="Validar" HorizontalAlignment="Left" Margin="438,20,0,0" VerticalAlignment="Top"
+                                Width="91" Height="35">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="5"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <RadioButton Visibility="Hidden" Click="chk1_Click" x:Name="chk1" IsChecked="True" Content="Número celular" HorizontalAlignment="Left" Height="23" Margin="112,64,0,0" VerticalAlignment="Top" Width="171"/>
+                        <RadioButton Visibility="Hidden" Click="chk1_Click" x:Name="chk2" Content="Cupón" HorizontalAlignment="Left" Height="23" Margin="307,64,0,0" VerticalAlignment="Top" Width="173"/>
+                        <Label Visibility="Hidden" Content="Elegir opción" Style="{DynamicResource lblsubTitleMit}" HorizontalAlignment="Left" Height="31" Margin="67,28,0,0" VerticalAlignment="Top" Width="403"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="frameCuponUnico" Visibility="Visible" d:IsHidden="True">
+                    <Grid>
+                        <Label Content="Cupón Valido" FontWeight="Bold" Foreground="Green" FontSize="30" HorizontalAlignment="Left" Margin="46,30,0,0" VerticalAlignment="Top"/>
+                        <Label  HorizontalAlignment="Left" Height="127" Margin="70,85,0,0" VerticalAlignment="Top" Width="566">
+                            <TextBlock x:Name="lblCuponU"/>
+                        </Label>
+                        <Button Cursor="Hand" Click="cmdRegresarCU_Click" x:Name="cmdRegresarCU" Content="Regresar" HorizontalAlignment="Left" Height="29" Margin="46,322,0,0" VerticalAlignment="Top" Width="72"/>
+                        <Button Cursor="Hand" Click="cmdRedimirCU_Click" x:Name="cmdRedimirCU" Content="Redmir" HorizontalAlignment="Left" Height="29" Margin="688,322,0,0" VerticalAlignment="Top" Width="72"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="frameError" Visibility="Visible" d:IsHidden="True">
+                    <Grid>
+                        <Label  HorizontalAlignment="Left" x:Name="lblError"  Height="147" Margin="10,83,0,0" VerticalAlignment="Top" Width="396">
+                            <TextBlock x:Name="lblResultadoE" TextWrapping="Wrap" ><Run Text="Resultado"/></TextBlock>
+                        </Label>
+                        <Label Content="Lo sentimos" FontSize="30" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Left" Height="52" Margin="18,10,0,0" VerticalAlignment="Top" Width="212"/>
+                        <Button Click="cmdRegresarE_Click" x:Name="cmdRegresarE" Content="Regresar" HorizontalAlignment="Left" Height="37" Margin="67,255,0,0" VerticalAlignment="Top" Width="112"/>
+                        <Button Click="cmdSalirE_Click" x:Name="cmdSalirE" Content="Salir" HorizontalAlignment="Left" Height="37" Margin="197,255,0,0" VerticalAlignment="Top" Width="112"/>
+                    </Grid>
+                </Border>
+                <Border x:Name="frameCuponMultiples" Visibility="Visible" Background="#FFAAA9A9" d:IsHidden="True">
+                    <Grid>
+                        <Label Content="Cupones" Foreground="Green" FontSize="30" FontWeight="Bold" HorizontalAlignment="Left" Height="51" Margin="10,10,0,0" VerticalAlignment="Top" Width="226"/>
+                        <RadioButton x:Name="rdCupon3" Content="RadioButton" HorizontalAlignment="Left" Margin="36,163,0,0" VerticalAlignment="Top"/>
+                        <RadioButton x:Name="rdCupon4" Content="RadioButton" HorizontalAlignment="Left" Margin="36,195,0,0" VerticalAlignment="Top"/>
+                        <RadioButton x:Name="rdCupon5" Content="RadioButton" HorizontalAlignment="Left" Margin="36,229,0,0" VerticalAlignment="Top"/>
+                        <Button Click="cmdRegresarCM_Click" x:Name="cmdRegresarCM" Content="Regresar" HorizontalAlignment="Left" Height="30" Margin="67,289,0,0" VerticalAlignment="Top" Width="103"/>
+                        <Button x:Name="cmdValida" Content="Validar" HorizontalAlignment="Left" Height="30" Margin="216,289,0,0" VerticalAlignment="Top" Width="103"/>
+                        <ScrollViewer HorizontalAlignment="Left" Height="342" Margin="332,28,0,0" VerticalAlignment="Top" Width="266"
+                                      HorizontalScrollBarVisibility="Hidden" PanningMode="VerticalOnly" CanContentScroll="True">
+                            <StackPanel HorizontalAlignment="Left" Height="342" VerticalAlignment="Bottom" Width="250" Background="White" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                                <RadioButton  x:Name="rdCupon1" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy1" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy2" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy3" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy4" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy5" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy6" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy7" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy8" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy9" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                                <RadioButton  x:Name="rdCupon1_Copy10" Content="Cupon 1 multiusos uno B644&#xA;Obten 10.00% de descuento" VerticalAlignment="Top" Padding="0,0,0,10" Height="44" Margin="0,0,0,5"/>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

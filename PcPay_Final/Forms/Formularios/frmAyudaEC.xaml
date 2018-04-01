@@ -1,0 +1,83 @@
+﻿<Window x:Class="PcPay.Forms.Formularios.frmAyudaEC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowStartupLocation="CenterScreen"
+        Title="Ayuda" Height="495" Width="479.104" Icon="/PcPay;component/Disenio/Images/PcPay.ico">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="Red"></Setter>
+            <Setter Property="IsReadOnly" Value="True"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <TabControl >
+            <TabItem Header="PCL" FontWeight="Bold">
+                <Grid Background="White">
+                    <Grid.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="Margin" Value="10"></Setter>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid/>
+                    <Border Margin="10">
+                        <Grid>
+                            <Label Foreground="#DF0101" Content="Escapes Codes" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="95" Margin="10,10,0,0"/>
+                            <Label FontWeight="Bold" Content="Escapes Codes General y Escapes Codes Leyenda" HorizontalAlignment="Left" Height="28" Margin="10,27,0,0" VerticalAlignment="Top" Width="409"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Tamaño de letra" HorizontalAlignment="Left" Margin="13,55,0,0" VerticalAlignment="Top" Width="112"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Interlineado" HorizontalAlignment="Left" Margin="180,55,0,0" VerticalAlignment="Top"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Negritas" HorizontalAlignment="Left" Margin="13,109,0,0" VerticalAlignment="Top"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="19,81,0,0" TextWrapping="Wrap" Text="Chr(27)(s16H" VerticalAlignment="Top" Width="161"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="185,81,0,0" TextWrapping="Wrap" Text="Chr(27)&amp;I5C" VerticalAlignment="Top" Width="169"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="19,135,0,0" TextWrapping="Wrap" Text="Chr(27)(s3B" VerticalAlignment="Top" Width="161"/>
+                            <Label FontWeight="Bold" Content="Escapes Codes Margen Izquierdo" HorizontalAlignment="Left" Height="28" Margin="10,175,0,0" VerticalAlignment="Top" Width="409"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Margen Izquierdo" HorizontalAlignment="Left" Margin="13,203,0,0" VerticalAlignment="Top" Width="112"/>
+                            <Label FontWeight="Bold" Content="Escapes Codes Margen Derecho" HorizontalAlignment="Left" Height="28" Margin="13,254,0,0" VerticalAlignment="Top" Width="409"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Margen Derecho" HorizontalAlignment="Left" Margin="16,282,0,0" VerticalAlignment="Top" Width="112"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="19,229,0,0" TextWrapping="Wrap" Text="Chr(27)&amp;a3L" VerticalAlignment="Top" Width="161"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="19,308,0,0" TextWrapping="Wrap" Text="Chr(27)&amp;a30M" VerticalAlignment="Top" Width="161"/>
+                            <Button Click="cerrar" Content="Aceptar" HorizontalAlignment="Left" Margin="169,348,0,0" VerticalAlignment="Top" Width="121"/>
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Axiohm" FontWeight="Bold">
+                <Grid Background="White">
+                    <Grid.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="Margin" Value="10"></Setter>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid/>
+                    <Border Margin="10">
+                        <Grid>
+                            <Label Foreground="#DF0101" Content="Escapes Codes" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="95" Margin="10,10,0,0"/>
+                            <Label FontWeight="Bold" Content="Escapes Codes General y Escapes Codes Leyenda" HorizontalAlignment="Left" Height="28" Margin="10,27,0,0" VerticalAlignment="Top" Width="409"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Inicializar Impresora" HorizontalAlignment="Left" Margin="13,55,0,0" VerticalAlignment="Top" Width="129"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Negritas" HorizontalAlignment="Left" Margin="180,55,0,0" VerticalAlignment="Top"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Tamaño de letra" HorizontalAlignment="Left" Margin="13,109,0,0" VerticalAlignment="Top"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="19,81,0,0" TextWrapping="Wrap" Text="Chr(27)@" VerticalAlignment="Top" Width="161"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="185,81,0,0" TextWrapping="Wrap" Text="Chr(&amp;H12)" VerticalAlignment="Top" Width="169"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="19,135,0,0" TextWrapping="Wrap" Text="Chr(29)!Chr(0)" VerticalAlignment="Top" Width="161"/>
+                            <Label FontWeight="Bold" Content="Alineación" HorizontalAlignment="Left" Height="28" Margin="13,175,0,0" VerticalAlignment="Top" Width="409"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Centrado" HorizontalAlignment="Left" Margin="14,203,0,0" VerticalAlignment="Top" Width="112"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Izquierda" HorizontalAlignment="Left" Margin="187,203,0,0" VerticalAlignment="Top" Width="112"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="19,229,0,0" TextWrapping="Wrap" Text="Chr(27)a1" VerticalAlignment="Top" Width="161"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="193,229,0,0" TextWrapping="Wrap" Text="Chr(27)a0" VerticalAlignment="Top" Width="161"/>
+                            <Button Click="cerrar" Content="Aceptar" HorizontalAlignment="Left" Margin="169,348,0,0" VerticalAlignment="Top" Width="121"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Corte" HorizontalAlignment="Left" Margin="185,109,0,0" VerticalAlignment="Top"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="185,135,0,0" TextWrapping="Wrap" Text="Chr(27)i" VerticalAlignment="Top" Width="169"/>
+                            <Label Style="{x:Null}" FontWeight="Medium" Content="Derecha" HorizontalAlignment="Left" Margin="14,257,0,0" VerticalAlignment="Top" Width="112"/>
+                            <TextBox HorizontalAlignment="Left" Height="23" Margin="14,283,0,0" TextWrapping="Wrap" Text="Chr(27)a2" VerticalAlignment="Top" Width="161"/>
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

@@ -1,0 +1,84 @@
+﻿<Window x:Class="PcPay.Forms.Formularios.ventanaQualitasTipoCobro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Loaded="Window_Loaded"
+        Title="frmMessageBox"  Height="480" Width="600" WindowStartupLocation="CenterOwner" WindowStyle="None" 
+        AllowsTransparency="True" Background="{x:Null}" ShowInTaskbar="False" ResizeMode="NoResize" KeyUp="event_KeyUp" >
+
+    <Grid Background="#4C0C4375" Margin="10,0,10,10">
+
+        <Grid Margin="0" MouseDown="Grid_MouseDown" Grid.RowSpan="2">
+            <Label Margin="0"/>
+        </Grid>
+
+        <Border BorderBrush="#FF0C4375" BorderThickness="3" Margin="33,30,27,10"  Background="#F2FFFFFF" HorizontalAlignment="Center" Width="520" Height="430" VerticalAlignment="Center" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="98*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="66*"/>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="67*"/>
+                    <RowDefinition Height="22*"/>
+                    <RowDefinition Height="76*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="491*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="LTITULO" Content="QUALITAS TIPO DE COBRO"  Style="{DynamicResource lblTitleMit}" Width="Auto" Margin="0,10,10,0" Grid.Column="1" />
+                <Button x:Name="BSALIR" Margin="0,12,12,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Grid.Column="1">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                    </Button.Background>
+                </Button>
+
+                <Label Style="{DynamicResource lblsubTitleMit}" Content="Datos del asegurado" HorizontalAlignment="Left"  Margin="0,60,0,0" VerticalAlignment="Top" Width="220" Grid.Column="1"/>
+                <Label Content="Nombre" Style="{DynamicResource labelMitStyle}" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="155" Grid.Column="1" Grid.Row="2"/>
+                <Label Content="Datos del vehículo" Style="{DynamicResource lblsubTitleMit}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="155" Grid.Column="1" Grid.Row="3"/>
+                <Label Content="Modelo" Style="{DynamicResource labelMitStyle}" HorizontalAlignment="Left" Margin="0,3,0,0" VerticalAlignment="Top" Width="155" Grid.Column="1" Grid.Row="4"/>
+                <Label Content="Descripción" Style="{DynamicResource labelMitStyle}" HorizontalAlignment="Left" Margin="0,3,0,0" 
+                       VerticalAlignment="Top" Width="155" Grid.Column="1" Grid.Row="5"/>
+                <Label Content="¿Los datos son correctos?" Style="{DynamicResource labelMitStyle}" HorizontalAlignment="Left" 
+                       Height="34" Margin="0,3,0,0" VerticalAlignment="Top" Width="236" Grid.Column="1" Grid.Row="7" FontSize="20"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="0,26,0,0" VerticalAlignment="Top" Width="454" Background="White" Grid.Column="1" Grid.Row="2">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/referencia.png"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                        <TextBox  TextAlignment="Left" IsReadOnly="True" KeyboardNavigation.TabIndex="0" FontSize="12"   x:Name="txtNombre" Style="{DynamicResource mitStyleText2}" />
+                    </Border>
+                </Grid>
+                <!--<Grid HorizontalAlignment="Left" Height="32" Margin="431,10,0,0" VerticalAlignment="Top" Width="34" Background="White" Grid.Column="1" Grid.Row="3">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/referencia.png"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                        <TextBox TextAlignment="Left" IsReadOnly="True" FontSize="12"  x:Name="txtVehiculo" Style="{DynamicResource mitStyleText2}" />
+                    </Border>
+                </Grid>-->
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="0,20,0,0" VerticalAlignment="Top" Width="454" Background="White" Grid.Column="1" Grid.Row="4">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/referencia.png"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                        <TextBox TextAlignment="Left" IsReadOnly="True" FontSize="12"  x:Name="txtModelo" Style="{DynamicResource mitStyleText2}" />
+                    </Border>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="0,20,0,0" VerticalAlignment="Top" Width="454" Background="White" Grid.Column="1" Grid.Row="5">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/referencia.png"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                    </Border>
+                </Grid>
+                <Button Click="Button_Click_1" Content="Sí"  Cursor="Hand" Grid.Column="1" Margin="260,6,174,35" Grid.Row="7" Width="50"  />
+                <Button Click="Button_Click" Cursor="Hand" Content="No" Margin="316,5,119,36" Grid.Column="1" Grid.Row="7" Width="Auto"/>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

@@ -1,0 +1,51 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmGiftCancelacion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"  Unloaded="Page_Unloaded"
+      d:DesignHeight="460" d:DesignWidth="775" HorizontalAlignment="Left" VerticalAlignment="Top"
+	Title="frmGiftCancelacion" Background="White" Loaded="Page_Loaded">
+    <Grid>
+        <Border>
+            <Grid>
+                <Label x:Name="LTITULO" Content="{}{*********}" Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="30,10,0,0" Width="745" />
+
+                <Button x:Name="BSALIR" Margin="0,12,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                    </Button.Background>
+                </Button>
+                <Label Visibility="Hidden"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="376">
+                    <TextBlock Foreground="Blue">Número de GiftCard 6123******4567</TextBlock>
+                </Label>
+                <Label Style="{DynamicResource labelMitStyle}" Content="Referencia" HorizontalAlignment="Left" Margin="34,68,0,0" VerticalAlignment="Top" Width="137"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="34,84,0,0" VerticalAlignment="Top" Width="291" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox CharacterCasing="Upper" MaxLength="9" x:Name="txtNumOper" LostFocus="TextBox_LostFocus" PreviewTextInput="TextBox_PreviewTextInput" Style="{DynamicResource mitStyleText2}"/>
+                    </Border>
+                </Grid>
+
+                <Label Style="{DynamicResource labelMitStyle}" Content="Importe" HorizontalAlignment="Left" Margin="34,127,0,0" VerticalAlignment="Top"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="34,148,0,0" VerticalAlignment="Top" Width="291" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/money.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox Style="{DynamicResource mitStyleText2}" MaxLength="9" PreviewTextInput="importe_PreviewTextInput" x:Name="importe" />
+                    </Border>
+                </Grid>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="lblMoneda" Content="MXN" HorizontalAlignment="Left" Margin="330,155,0,0" VerticalAlignment="Top"/>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="lblCard" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="663" Height="23"/>
+                <Button Click="cmdNuevo_Click"  x:Name="cmdNuevo"  Content="Otra Cancelacion" HorizontalAlignment="Left" Margin="410,84,0,0" VerticalAlignment="Top" Width="126" Height="43"/>
+                <Button Click="cmdLeer_Click" x:Name="cmdLeer" Content="Enviar"  HorizontalAlignment="Left" Margin="410,84,0,0" VerticalAlignment="Top" Width="126" Height="43"/>
+                <Button Click="cmdVoucher_Click" x:Name="cmdVoucher" Content="Imprime Voucher" HorizontalAlignment="Left" Margin="410,144,0,0" VerticalAlignment="Top" Width="126" Height="43"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

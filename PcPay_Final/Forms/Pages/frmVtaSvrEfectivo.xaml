@@ -1,0 +1,56 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmVtaSvrEfectivo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top"
+      d:DesignHeight="300" d:DesignWidth="775" Background="White"
+	Title="frmVtaSvrEfectivo" Loaded="cargandoVentana">
+
+    <Grid>
+
+        <Border>
+            <Grid>
+                <Label x:Name="LTITTULO" Content="VENTA DE SERVICIO EN EFECTIVO" Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="30,10,0,0" Width="745" />
+
+                <Button x:Name="BSALIR" Margin="0,12,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                    </Button.Background>
+                </Button>
+                <Label Style="{DynamicResource labelMitStyle}" Visibility="Hidden" x:Name="lbl044" Content="044" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="31"/>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="lblReferencia" Content="Referencia" HorizontalAlignment="Left" Margin="28,55,0,0" VerticalAlignment="Top"/>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="lblImporte" Content="Importe" HorizontalAlignment="Left" Margin="28,121,0,0" VerticalAlignment="Top"/>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="lblMoneda" Content="MXN" HorizontalAlignment="Left" Margin="371,143,0,0" VerticalAlignment="Top"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="28,71,0,0" VerticalAlignment="Top" Width="338" Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="92*"/>
+                        <ColumnDefinition Width="199*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" Grid.ColumnSpan="2" >
+                        <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Style="{DynamicResource mitStyleText2}" LostFocus="txtReferencia_LostFocus" PreviewTextInput="txtReferencia_PreviewTextInput" MaxLength="40" x:Name="txtReferencia" IsEnabled="False" Margin="1,0,9,-1" />
+                    </Border>
+                </Grid>
+
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="28,137,0,0" VerticalAlignment="Top" Width="338" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/money.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" Style="{DynamicResource mitStyleText2}" LostFocus="importe_LostFocus" PreviewTextInput="importe_PreviewTextInput" MaxLength="9" x:Name="importe" IsEnabled="False" />
+                    </Border> 
+                </Grid>
+
+                <Button Cursor="Hand" Click="cmdNuevo_Click" x:Name="cmdNuevo" Visibility="Hidden" Content="Ingresar Otra" HorizontalAlignment="Left" Margin="251,121,0,0" VerticalAlignment="Top" Width="115" Height="30"/>
+                <Button Cursor="Hand" Click="cmdEnviar_Click" x:Name="cmdEnviar" Content="Cobrar" HorizontalAlignment="Left" Margin="458,83,0,0" VerticalAlignment="Top" Width="115" Height="30"/>
+                <Button Cursor="Hand" Click="cmdVoucher_Click" x:Name="cmdVoucher" IsEnabled="False" Content="Reimprimir Voucher" HorizontalAlignment="Left" Margin="458,123,0,0" VerticalAlignment="Top" Width="115" Height="30"/>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>

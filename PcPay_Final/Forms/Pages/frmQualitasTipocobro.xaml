@@ -1,0 +1,75 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmQualitasTipocobro"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" Background="White" Loaded="Page_Loaded"
+      d:DesignHeight="460" d:DesignWidth="770"
+	Title="frmQualitasTipocobro" VerticalAlignment="Top" HorizontalAlignment="Left">
+    <Grid>
+        <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="4" Grid.RowSpan="2" d:IsLocked="True"/>
+        <Grid>
+            <Grid.RowDefinitions>
+
+            </Grid.RowDefinitions>
+            <Label x:Name="LTITTULO" Content="QUALITAS TIPO COBRO"  Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="30,10,0,0" Width="740" />
+
+            <Button x:Name="BSALIR" Margin="0,12,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" IsTabStop="False">
+                <Button.Background>
+                    <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                </Button.Background>
+            </Button>
+            <Border x:Name="frameTipoCobro">
+                <Grid Margin="0,59,0,264">
+
+
+                    <Label Style="{DynamicResource labelMitStyle}" x:Name="label1" Content="Tipo cobro" HorizontalAlignment="Left" Height="35" 
+                       Margin="54,10,0,0" VerticalAlignment="Top" Width="118" FontSize="20"/>
+                    <ComboBox x:Name="cbTipoCobro"  HorizontalAlignment="Left" Margin="54,45,0,0" FontSize="20" VerticalAlignment="Top" Width="523" Height="35" SelectionChanged="cbTipoCobro_SelectionChanged">
+                        <ComboBoxItem Content="Pólizas"/>
+                        <ComboBoxItem Content="Deducibles"/>
+                        <ComboBoxItem Content="Otros"/>
+                    </ComboBox>
+                    <Button Cursor="Hand" x:Name="cmdCancelar" Click="cmdCancelar_Click" Content="Cancelar" 
+                		Margin="477,85,193,17" Width="100"/>
+                </Grid>
+            </Border>
+            <Border Visibility="Visible" x:Name="frameDeducible" d:IsHidden="False" Margin="0,128,0,0">
+                <Grid Margin="0,107,0,-107">
+                    <Label Style="{DynamicResource labelMitStyle}" x:Name="label3" Content="Número de siniestro" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top"/>
+                    <Grid HorizontalAlignment="Left" Height="32               " Margin="80,30,0,0" VerticalAlignment="Top" Width="272" Background="White">
+                        <Border Style="{DynamicResource imgBorderMit}">
+                            <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/card.png"/>
+                        </Border>
+                        <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                            <TextBox MaxLength="11" LostFocus="txtDeducible_LostFocus" x:Name="txtDeducible" Style="{DynamicResource mitStyleText2}" KeyDown="txtDeducible_KeyDown"/>
+                        </Border>
+
+                    </Grid>
+                    <Button Cursor="Hand" Click="cmdAceptarDeducible_Click" x:Name="cmdAceptarDeducible" Content="Consultar" Margin="360,30,310,267" Width="100"/>
+                    <Button Cursor="Hand" Click="cmdCancelarDeducible_Click" x:Name="cmdCancelarDeducible" Content="Cancelar" Width="100" Margin="469,30,201,267"/>
+
+                </Grid>
+            </Border>
+            <Border x:Name="framePoliza" Visibility="Visible" Margin="0,327,0,0">
+                <Grid Margin="0,-92,0,0" >
+                    <Label Style="{DynamicResource labelMitStyle}" x:Name="label2" Content="Número de Póliza" HorizontalAlignment="Left" Margin="80,10,0,0" VerticalAlignment="Top" Width="164"/>
+                    <Grid HorizontalAlignment="Left" Height="32               " Margin="80,30,0,0" VerticalAlignment="Top" Width="272" Background="White">
+                        <Border Style="{DynamicResource imgBorderMit}">
+                            <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/card.png"/>
+                        </Border>
+                        <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                            <TextBox MaxLength="10" LostFocus="txtNumPoliza_LostFocus" x:Name="txtNumPoliza" Style="{DynamicResource mitStyleText2}" KeyDown="txtNumPoliza_KeyDown"/>
+                        </Border>
+
+                    </Grid>
+                    <Button Cursor="Hand"  Click="cmdAceptarPoliza_Click" x:Name="cmdAceptarPoliza" Content="Consultar" Margin="357,30,308,160" Width="100" />
+                    <Button Cursor="Hand" Click="cmdCancelarPoliza_Click" x:Name="cmdCancelarPoliza" Content="Cancelar" Margin="469,30,201,160" Width="100"/>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

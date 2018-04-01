@@ -1,0 +1,22 @@
+﻿<Window x:Class="PcPay.Forms.formularios.frmLectorConectado"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowStartupLocation="CenterOwner"
+        Title="Verifique su lector" Height="170" Width="500" ResizeMode="NoResize" WindowStyle="ToolWindow" ShowInTaskbar="False">
+    <Grid>
+        <Button x:Name="cmdBoton" Cursor="Hand" Margin="0,91,120,0" Click="aceptar" Content="Aceptar" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Cursor="Hand" Margin="0,91,15,0" Click="cancelar" Content="Cancelar" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="100">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBlock TextAlignment="Justify" TextWrapping="Wrap" x:Name="lbl1" FontSize="15" Margin="30,10,15,56"><Run Text="Verifique que su lector se encuentre conectado y haga clic en &quot;Aceptar&quot; de lo contrario haga clic en &quot;Cancelar&quot; para continuar sin lector."/></TextBlock>
+    </Grid>
+</Window>

@@ -1,0 +1,74 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmCuponAlta"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  Background="White"
+      mc:Ignorable="d"  Loaded="Page_Loaded"
+      d:DesignHeight="460" d:DesignWidth="770" VerticalAlignment="Top"
+	Title="frmCuponAlta" Width="775" Height="465" HorizontalAlignment="Left">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="177*"/>
+            <RowDefinition Height="224*"/>
+        </Grid.RowDefinitions>
+
+        <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="30,10,0,0" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="2" Grid.RowSpan="2" d:IsLocked="True"/>
+
+        <Label  x:Name="LTITULO" Style="{DynamicResource lblTitleMit}" Content="*****" Margin="32,0,0,0" Width="Auto" Grid.Row="1" />
+        <Button x:Name="BSALIR" Margin="0,2,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" RenderTransformOrigin="-5.733,2.933" Grid.Row="1">
+            <Button.Background>
+                <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+            </Button.Background>
+        </Button>
+        <Border Grid.RowSpan="2" Margin="0,0,0,166" Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="184*"/>
+                </Grid.RowDefinitions>
+                <Label Style="{DynamicResource labelMitStyle}" Content="Número Celular" HorizontalAlignment="Left" Margin="30,3,0,0" VerticalAlignment="Top"/>
+                <Label Style="{DynamicResource labelMitStyle}" Content="Correo Electrónico" HorizontalAlignment="Left" Margin="30,3,0,0" VerticalAlignment="Top" x:Name="lblEmail" Grid.Row="1"/>
+
+                <Grid HorizontalAlignment="Left" Height="32" Margin="30,20,0,0" VerticalAlignment="Top" Width="365" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/tel.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox MaxLength="10" PreviewTextInput="txtTelefono_PreviewTextInput" x:Name="txtTelefono" Style="{DynamicResource mitStyleText2}"/>
+                    </Border>
+                </Grid>
+                <Grid x:Name="txtMail2" HorizontalAlignment="Left" Height="32" Margin="30,20,0,0" VerticalAlignment="Top" Width="365" Background="White" Grid.Row="1">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/correo.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox x:Name="txtMail" Style="{DynamicResource mitStyleText2}"/>
+                    </Border>
+                </Grid>
+                <Button Cursor="Hand" Click="cmdNuevo_Click" x:Name="cmdNuevo" Content="Nuevo" HorizontalAlignment="Left" Margin="400,20,0,0" VerticalAlignment="Top"
+                        Width="100" Height="35">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Cursor="Hand" Click="cmdAlta_Click" x:Name="cmdAlta" Content="Dar de Alta" HorizontalAlignment="Left" Margin="400,20,0,0" VerticalAlignment="Top" 
+                        Width="100" Height="35">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

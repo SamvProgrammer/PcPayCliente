@@ -1,0 +1,68 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmGiftCobroM"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"  Background="White" Loaded="Page_Loaded"
+      d:DesignHeight="460" d:DesignWidth="775"
+	Title="frmGiftCobroM">
+    <Grid>
+        <Border>
+            <Grid>
+                <Label Style="{DynamicResource labelMitStyle}"  Visibility="Hidden" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="376">
+                    <TextBlock Foreground="Blue">Número de GiftCard 6123******4567</TextBlock>
+                </Label>
+                <Label Style="{DynamicResource labelMitStyle}" Content="Numero de tarjeta" HorizontalAlignment="Left" Margin="23,58,0,0" VerticalAlignment="Top" Width="207"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="23,79,0,0" VerticalAlignment="Top" Width="330" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/card.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox  CommandManager.PreviewExecuted="textBox_PreviewExecuted"  Style="{DynamicResource mitStyleText2}" MaxLength="16" PreviewTextInput="txtNumTarjeta_PreviewTextInput" x:Name="txtNumTarjeta" />
+                    </Border>
+                </Grid>
+                <Label Style="{DynamicResource labelMitStyle}" Content="Importe" HorizontalAlignment="Left" Margin="418,134,0,0" VerticalAlignment="Top"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="418,155,0,0" VerticalAlignment="Top" Width="276" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/money.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox  CommandManager.PreviewExecuted="textBox_PreviewExecuted"  Style="{DynamicResource mitStyleText2}" MaxLength="9" PreviewTextInput="importe_PreviewTextInput" x:Name="importe" />
+                    </Border>
+                </Grid>
+                <Label Style="{DynamicResource labelMitStyle}" Content="MXN" HorizontalAlignment="Left" Margin="699,161,0,0" VerticalAlignment="Top"/>
+                <Label Style="{DynamicResource labelMitStyle}" Content="Code(wac)" HorizontalAlignment="Left" Margin="418,58,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.278,0.522"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="418,79,0,0" VerticalAlignment="Top" Width="276" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox  CommandManager.PreviewExecuted="textBox_PreviewExecuted"  Style="{DynamicResource mitStyleText2}" MaxLength="7" PreviewTextInput="txtCode_PreviewTextInput" x:Name="txtCode" />
+                    </Border>
+                </Grid>
+
+                <Label Style="{DynamicResource labelMitStyle}" Content="Referencia" HorizontalAlignment="Left" Margin="23,134,0,0" VerticalAlignment="Top" Width="114"/>
+                <Grid HorizontalAlignment="Left" Height="32               " Margin="23,155,0,0" VerticalAlignment="Top" Width="330" Background="White">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                        <TextBox PreviewTextInput="numOrden_PreviewTextInput" CommandManager.PreviewExecuted="textBox_PreviewExecuted"  Style="{DynamicResource mitStyleText2}"  CharacterCasing="Upper" MaxLength="25" x:Name="numOrden" />
+                    </Border>
+                </Grid>
+                <Button Click="cmdNuevo_Click" x:Name="cmdNuevo" Content="Otra Cobro" HorizontalAlignment="Left" Margin="235,218,0,0" VerticalAlignment="Top" Width="118" Height="34"/>
+                <Button Click="cmdLeer_Click" x:Name="cmdLeer" Content="Enviar" HorizontalAlignment="Left" Margin="235,218,0,0" VerticalAlignment="Top" Width="118" Height="34"/>
+                <Button Click="cmdvoucher_Click" x:Name="cmdvoucher" Content="Imprime Voucher" HorizontalAlignment="Left" Margin="418,218,0,0" VerticalAlignment="Top" Width="114" Height="34"/>
+                <Label x:Name="LTITULO" Content="{}{*********}" Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="30,10,0,0" Width="745" />
+
+                <Button x:Name="BSALIR" Margin="0,12,166,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

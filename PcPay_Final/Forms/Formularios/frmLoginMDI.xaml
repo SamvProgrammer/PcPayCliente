@@ -1,0 +1,42 @@
+﻿<Window x:Class="PcPay.Forms.Formularios.frmLoginMDI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Icon="/PcPay;component/PcPay.ico"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowStartupLocation="CenterOwner" 
+        Title="Cambio de usuario" Height="241.404" Width="318.66" Loaded="Window_Loaded" WindowStyle="None">
+    <Border BorderThickness="3" BorderBrush="Black">
+        <Grid>
+            <Label x:Name="LTITULO" Content="Cambiar de usuario" Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="10,0,0,0" Width="285" />
+
+            <Button x:Name="BSALIR" Margin="0,0,10,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+                <Button.Background>
+                    <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                </Button.Background>
+            </Button>
+            <Label Style="{DynamicResource labelMitStyle}" Foreground="#DF0101" FontWeight="Bold" Content="Usuario" HorizontalAlignment="Left" Height="27" Margin="19,44,0,0" VerticalAlignment="Top" Width="79" RenderTransformOrigin="0.418,0.37"/>
+            <Label Style="{DynamicResource labelMitStyle}" Foreground="#DF0101" FontWeight="Bold" Content="Contraseña" HorizontalAlignment="Left" Height="27" Margin="19,108,0,0" VerticalAlignment="Top" Width="79"/>
+
+
+            <Grid HorizontalAlignment="Left" Height="32               " Margin="19,76,0,0" VerticalAlignment="Top" Width="254" Background="White">
+                <Border Style="{DynamicResource imgBorderMit}" >
+                    <Image Source="/PcPay;component/Resources/mituser.png" Style="{DynamicResource imageStyleMit2}"/>
+                </Border>
+                <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                    <TextBox CharacterCasing="Upper" x:Name="txtUser" PreviewTextInput="TextBox_PreviewTextInput" MaxLength="20" Style="{DynamicResource mitStyleText2}"/>
+                </Border>
+            </Grid>
+
+
+            <Grid HorizontalAlignment="Left" Height="32               " Margin="19,140,0,0" VerticalAlignment="Top" Width="254" Background="White">
+                <Border Style="{DynamicResource imgBorderMit}">
+                    <Image Source="/PcPay;component/Resources/cvv.png" Style="{DynamicResource imageStyleMit2}"/>
+                </Border>
+                <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                    <PasswordBox LostFocus="txtPwd_LostFocus" x:Name="txtPwd" MaxLength="20" Style="{DynamicResource mitStylePassword2}" PreviewTextInput="PasswordBox_PreviewTextInput" />
+                </Border>
+            </Grid>
+            <Button x:Name="cmdAceptar" Click="aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="176,177,0,0" VerticalAlignment="Top" Width="97"/>
+
+        </Grid>
+    </Border>
+</Window>

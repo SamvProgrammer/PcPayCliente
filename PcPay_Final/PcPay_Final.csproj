@@ -1,0 +1,941 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F4A7BA2-91C6-4AD0-AE42-33A7139C75F5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PcPay</RootNamespace>
+    <AssemblyName>PcPay</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>PcPay.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="cpIntegracionEMV, Version=10.0.0.0, Culture=neutral, PublicKeyToken=676d72a3a8f7bc3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\versiones dll\cpIntegracionEMV.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.WPF">
+      <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Resource Include="Disenio\StyleMit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="Forms\Formularios\cargandoFormulario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmAvisoBanda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmAyudaEC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Formularios\frmBloqueo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Formularios\frmBoletosAerolinea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Formularios\frmDesbloquear.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Formularios\frmConectividad.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmConfirmaTel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmCsvAMEX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmLectorConectado.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmLoginMDI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Formularios\frmPassword.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmProbarLector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmReaderDigest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmReferencia.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmReporteCyC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Formularios\frmTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Formularios\frmTokenValido.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\frmUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\inputBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\MessagesW\frmConfirma.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Formularios\MessagesW\frmCuponRedimir.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Formularios\MessagesW\frmMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\MessagesW\frmVtaAprobada.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\MessagesW\frmVtaDenegada.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Formularios\MessagesW\frmVtaError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Disenio\StyleMit2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Formularios\ventanaQualitasTipoCobro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\frmLicencia.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\frmLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\frmMenuPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\frmReporte.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Clases\ClsImp.cs" />
+    <Compile Include="Code\Clases\clsMIT3Gate.cs" />
+    <Compile Include="Code\Clases\clsMITVtaServicios.cs" />
+    <Compile Include="Code\Clases\HyperLink.cs" />
+    <Compile Include="Code\Clases\MITWebService.cs" />
+    <Compile Include="Code\Configuracion\cpHTTP.cs" />
+    <Compile Include="Code\Configuracion\cpIntegracion.cs" />
+    <Compile Include="Code\Configuracion\MessageBoxEx.cs" />
+    <Compile Include="Code\Configuracion\Program.cs" />
+    <Compile Include="Code\Configuracion\Responsive.cs" />
+    <Compile Include="Code\Modelos\EmpresaBoletos.cs" />
+    <Compile Include="Code\Modelos\EmpresaConvenio.cs" />
+    <Compile Include="Code\Modelos\EmpresaReferencia.cs" />
+    <Compile Include="Code\Modelos\HotelCheck.cs" />
+    <Compile Include="Code\Usuario\CFE.cs" />
+    <Compile Include="Code\Usuario\clsQualitas.cs" />
+    <Compile Include="Code\Usuario\TypeUsuario.cs" />
+    <Compile Include="Code\Utilidades\Ayuda.cs" />
+    <Compile Include="Code\Utilidades\cpIntegracion.cs" />
+    <Compile Include="Code\Utilidades\cpTdcStd.cs" />
+    <Compile Include="Code\Utilidades\Desintalador.cs" />
+    <Compile Include="Code\Utilidades\EncryptC.cs" />
+    <Compile Include="Code\Utilidades\InputBox.cs" />
+    <Compile Include="Code\Utilidades\modMIT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Utilidades\Utils.cs" />
+    <Compile Include="Configuracion\Globales.cs" />
+    <Compile Include="Configuracion\XMLDocument.cs" />
+    <Compile Include="Forms\Formularios\cargandoFormulario.xaml.cs">
+      <DependentUpon>cargandoFormulario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmAvisoBanda.xaml.cs">
+      <DependentUpon>frmAvisoBanda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmAyudaEC.xaml.cs">
+      <DependentUpon>frmAyudaEC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmBloqueo.xaml.cs">
+      <DependentUpon>frmBloqueo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmBoletosAerolinea.xaml.cs">
+      <DependentUpon>frmBoletosAerolinea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmDesbloquear.xaml.cs">
+      <DependentUpon>frmDesbloquear.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmConectividad.xaml.cs">
+      <DependentUpon>frmConectividad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmConfirmaTel.xaml.cs">
+      <DependentUpon>frmConfirmaTel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmCsvAMEX.xaml.cs">
+      <DependentUpon>frmCsvAMEX.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmLectorConectado.xaml.cs">
+      <DependentUpon>frmLectorConectado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmLoginMDI.xaml.cs">
+      <DependentUpon>frmLoginMDI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmPassword.xaml.cs">
+      <DependentUpon>frmPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmProbarLector.xaml.cs">
+      <DependentUpon>frmProbarLector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmReaderDigest.xaml.cs">
+      <DependentUpon>frmReaderDigest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmReferencia.xaml.cs">
+      <DependentUpon>frmReferencia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmReporteCyC.xaml.cs">
+      <DependentUpon>frmReporteCyC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmTip.xaml.cs">
+      <DependentUpon>frmTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmTokenValido.xaml.cs">
+      <DependentUpon>frmTokenValido.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\frmUpdate.xaml.cs">
+      <DependentUpon>frmUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\inputBox.xaml.cs">
+      <DependentUpon>inputBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\MessagesW\frmConfirma.xaml.cs">
+      <DependentUpon>frmConfirma.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\MessagesW\frmCuponRedimir.xaml.cs">
+      <DependentUpon>frmCuponRedimir.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\MessagesW\frmMessageBox.xaml.cs">
+      <DependentUpon>frmMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\MessagesW\frmVtaAprobada.xaml.cs">
+      <DependentUpon>frmVtaAprobada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\MessagesW\frmVtaDenegada.xaml.cs">
+      <DependentUpon>frmVtaDenegada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\MessagesW\frmVtaError.xaml.cs">
+      <DependentUpon>frmVtaError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Formularios\ventanaQualitasTipoCobro.xaml.cs">
+      <DependentUpon>ventanaQualitasTipoCobro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLicencia.xaml.cs">
+      <DependentUpon>frmLicencia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.xaml.cs">
+      <DependentUpon>frmLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMenuPrincipal.xaml.cs">
+      <DependentUpon>frmMenuPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReporte.xaml.cs">
+      <DependentUpon>frmReporte.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Forms\Pages\fmrAcerca.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frm3GateBanda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frm3GateFormaPago.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frm3GateReferencia.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frm3GateSmartReference.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmAVSs2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmAVSs2Agencia.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmBanda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmBandaEMV.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmCancelacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmCheckIn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmCheckout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmCierrePreventa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmConsultaPNR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmCorteRecompensas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmCuponAlta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmCuponBusqueda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmFacileasing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Pages\frmFacturaDatos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmFacturaE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmGiftACT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmGiftCancelacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmGiftCancelacionM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmGiftCobroM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmGiftEdoCuenta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmGiftREC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmGiftRECIdPersonal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmGiftVenta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmImpresion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmImpresionRecompensas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmImpresionWallets.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmImpresora.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmLector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmMoto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmMotoAgencia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Pages\frmMotoChekin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmPagoReservacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmPagueDirectoReimpresion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmPagueDirectoReporte.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmPreguntaFactura.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmPreventa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmPreventaPropina.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmProcesaCheckout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmProcesaCierrePreventa.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmQualitasTipocobro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmReAutorizacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmRecompensasSinPresencia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Pages\frmReservacion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmToken.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmVentaForzada.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmVtaSrvBanda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmVtaSrvSeleccionar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Pages\frmVtaSvrEfectivo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\Pages\fmrAcerca.xaml.cs">
+      <DependentUpon>fmrAcerca.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frm3GateBanda.xaml.cs">
+      <DependentUpon>frm3GateBanda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frm3GateFormaPago.xaml.cs">
+      <DependentUpon>frm3GateFormaPago.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frm3GateReferencia.xaml.cs">
+      <DependentUpon>frm3GateReferencia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frm3GateSmartReference.xaml.cs">
+      <DependentUpon>frm3GateSmartReference.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmAVSs2.xaml.cs">
+      <DependentUpon>frmAVSs2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmAVSs2Agencia.xaml.cs">
+      <DependentUpon>frmAVSs2Agencia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmBanda.xaml.cs">
+      <DependentUpon>frmBanda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmBandaEMV.xaml.cs">
+      <DependentUpon>frmBandaEMV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmCancelacion.xaml.cs">
+      <DependentUpon>frmCancelacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmCheckIn.xaml.cs">
+      <DependentUpon>frmCheckIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmCheckout.xaml.cs">
+      <DependentUpon>frmCheckout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmCierrePreventa.xaml.cs">
+      <DependentUpon>frmCierrePreventa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmConsultaPNR.xaml.cs">
+      <DependentUpon>frmConsultaPNR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmCorteRecompensas.xaml.cs">
+      <DependentUpon>frmCorteRecompensas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmCuponAlta.xaml.cs">
+      <DependentUpon>frmCuponAlta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmCuponBusqueda.xaml.cs">
+      <DependentUpon>frmCuponBusqueda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmFacileasing.xaml.cs">
+      <DependentUpon>frmFacileasing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmFacturaDatos.xaml.cs">
+      <DependentUpon>frmFacturaDatos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmFacturaE.xaml.cs">
+      <DependentUpon>frmFacturaE.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmGiftACT.xaml.cs">
+      <DependentUpon>frmGiftACT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmGiftCancelacion.xaml.cs">
+      <DependentUpon>frmGiftCancelacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmGiftCancelacionM.xaml.cs">
+      <DependentUpon>frmGiftCancelacionM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmGiftCobroM.xaml.cs">
+      <DependentUpon>frmGiftCobroM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmGiftEdoCuenta.xaml.cs">
+      <DependentUpon>frmGiftEdoCuenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmGiftREC.xaml.cs">
+      <DependentUpon>frmGiftREC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmGiftRECIdPersonal.xaml.cs">
+      <DependentUpon>frmGiftRECIdPersonal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmGiftVenta.xaml.cs">
+      <DependentUpon>frmGiftVenta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmImpresion.xaml.cs">
+      <DependentUpon>frmImpresion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmImpresionRecompensas.xaml.cs">
+      <DependentUpon>frmImpresionRecompensas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmImpresionWallets.xaml.cs">
+      <DependentUpon>frmImpresionWallets.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmImpresora.xaml.cs">
+      <DependentUpon>frmImpresora.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmLector.xaml.cs">
+      <DependentUpon>frmLector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmMoto.xaml.cs">
+      <DependentUpon>frmMoto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmMotoAgencia.xaml.cs">
+      <DependentUpon>frmMotoAgencia.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\Pages\frmMotoChekin.xaml.cs">
+      <DependentUpon>frmMotoChekin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmPagoReservacion.xaml.cs">
+      <DependentUpon>frmPagoReservacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmPagueDirectoReimpresion.xaml.cs">
+      <DependentUpon>frmPagueDirectoReimpresion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmPagueDirectoReporte.xaml.cs">
+      <DependentUpon>frmPagueDirectoReporte.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmPreguntaFactura.xaml.cs">
+      <DependentUpon>frmPreguntaFactura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmPreventa.xaml.cs">
+      <DependentUpon>frmPreventa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmPreventaPropina.xaml.cs">
+      <DependentUpon>frmPreventaPropina.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmProcesaCheckout.xaml.cs">
+      <DependentUpon>frmProcesaCheckout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmProcesaCierrePreventa.xaml.cs">
+      <DependentUpon>frmProcesaCierrePreventa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmQualitasTipocobro.xaml.cs">
+      <DependentUpon>frmQualitasTipocobro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmReAutorizacion.xaml.cs">
+      <DependentUpon>frmReAutorizacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmRecompensasSinPresencia.xaml.cs">
+      <DependentUpon>frmRecompensasSinPresencia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmReservacion.xaml.cs">
+      <DependentUpon>frmReservacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmToken.xaml.cs">
+      <DependentUpon>frmToken.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmVentaForzada.xaml.cs">
+      <DependentUpon>frmVentaForzada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmVtaSrvBanda.xaml.cs">
+      <DependentUpon>frmVtaSrvBanda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmVtaSrvSeleccionar.xaml.cs">
+      <DependentUpon>frmVtaSrvSeleccionar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pages\frmVtaSvrEfectivo.xaml.cs">
+      <DependentUpon>frmVtaSvrEfectivo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PcPay.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\PcPay.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\Pantalla.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\santander.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\cancelar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\foco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mitUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fondos\creditcards.png" />
+    <Resource Include="Resources\fondos\loginback.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\menuIcons\administracion.png" />
+    <Resource Include="Resources\menuIcons\ayuda.png" />
+    <Resource Include="Resources\menuIcons\cupones.png" />
+    <Resource Include="Resources\menuIcons\e-factura.png" />
+    <Resource Include="Resources\menuIcons\recompensas.png" />
+    <Resource Include="Resources\menuIcons\tokenizacion.png" />
+    <Resource Include="Resources\menuIcons\transacciones.png" />
+    <Resource Include="Resources\menuIcons\ventadeboletos.png" />
+    <Resource Include="Resources\menuIcons\ventaservicios.png" />
+    <Resource Include="Resources\menuIcons\ventasmiscelaneos.png" />
+    <Resource Include="Resources\menuIcons\ventaspropias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3.png" />
+    <Resource Include="Resources\AddTicket.png" />
+    <Resource Include="Resources\auth.png" />
+    <Resource Include="Resources\branch.png" />
+    <Resource Include="Resources\calendar.png" />
+    <Resource Include="Resources\calle.png" />
+    <Resource Include="Resources\card.png" />
+    <Resource Include="Resources\centroPagos.png" />
+    <Resource Include="Resources\ciudad.png" />
+    <Resource Include="Resources\close1.png" />
+    <Resource Include="Resources\col.png" />
+    <Resource Include="Resources\company.png" />
+    <Resource Include="Resources\correo.png" />
+    <Resource Include="Resources\cp.png" />
+    <Resource Include="Resources\cvv.png" />
+    <Resource Include="Resources\defaultIcon.png" />
+    <Resource Include="Resources\denied.png" />
+    <Resource Include="Resources\email.png" />
+    <Resource Include="Resources\error.png" />
+    <Resource Include="Resources\info.png" />
+    <Resource Include="Resources\key.png" />
+    <Resource Include="Resources\left.png" />
+    <Resource Include="Resources\loading.gif" />
+    <Resource Include="Resources\logo.png" />
+    <Resource Include="Resources\logo_mit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\money.png" />
+    <Resource Include="Resources\muni.png" />
+    <Resource Include="Resources\pais.png" />
+    <Resource Include="Resources\referencia.png" />
+    <Resource Include="Resources\right.png" />
+    <Resource Include="Resources\success.png" />
+    <Resource Include="Resources\tel.png" />
+    <Resource Include="Resources\unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\unknown1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\bien.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\mal.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Disenio\Images\maso.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\loader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ASPPrinterCOM">
+      <Guid>{77050CAF-A874-4C12-9599-5004B5953CB7}</Guid>
+      <VersionMajor>7</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxiohmPrinterMit">
+      <Guid>{2F0C3656-0234-4249-9474-0E13686A4063}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CryptoCOMLib">
+      <Guid>{583BBC85-FDB4-4049-AE54-43DFA0DEEA5F}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="RawDataPrinter">
+      <Guid>{5F5ECE34-692C-4A48-911F-826F8609B153}</Guid>
+      <VersionMajor>10</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\promo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

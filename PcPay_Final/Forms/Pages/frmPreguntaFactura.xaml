@@ -1,0 +1,39 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmPreguntaFactura"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" VerticalAlignment="Top"
+	Title="frmPreguntaFactura" Background="White" Width="775" Height="465" HorizontalAlignment="Left">
+
+    <Grid>
+        <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="4" Grid.RowSpan="2" d:IsLocked="True"/>
+        <Label x:Name="LTITULO" Content="FACTURA ELECTRÓNICA"  Style="{DynamicResource lblTitleMit}" Margin="30,10,0,0" Width="Auto" />
+
+        <Button x:Name="BSALIR" Margin="0,12,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+            <Button.Background>
+                <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+            </Button.Background>
+        </Button>
+        <RadioButton  IsChecked="True" x:Name="OptAhora" Content="Ingresar datos ahora [?]" HorizontalAlignment="Left" Margin="169,77,0,0" VerticalAlignment="Top" Height="26" Width="196"/>
+        <RadioButton x:Name="OptDespues" Content="Generar folio [?]" HorizontalAlignment="Left" Margin="169,198,0,0" VerticalAlignment="Top"/>
+        <Label Style="{DynamicResource labelMitStyle}"  HorizontalAlignment="Left" Margin="169,103,0,0" VerticalAlignment="Top" Width="368" Height="61">
+            <TextBlock TextWrapping="Wrap">
+                 Se deberán ingresar los datos del cliente y la factura le será entregada en su correo electronico.
+            </TextBlock>
+        </Label>
+        <Label Style="{DynamicResource labelMitStyle}"  HorizontalAlignment="Left" Margin="169,224,0,0" VerticalAlignment="Top" Width="368" Height="61">
+            <TextBlock  TextWrapping="Wrap"><Run Text="Se imprimirá un ticket el cual deberá de entregar a su cliente.Él posteriormente por medio de internet generará la factura."/></TextBlock>
+        </Label>
+        <Button Cursor="Hand" x:Name="cmdAceptar" Click="cmdAceptar_Click" Content="Aceptar" HorizontalAlignment="Left" Margin="421,322,0,0" VerticalAlignment="Top" 
+                Width="94" Height="35">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Page>

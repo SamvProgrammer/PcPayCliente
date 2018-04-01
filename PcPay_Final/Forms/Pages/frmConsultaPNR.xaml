@@ -1,0 +1,66 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmConsultaPNR"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" Loaded="Page_Loaded" HorizontalAlignment="Left"
+	Title="frmConsultaPNR" Height="440" Width="775" VerticalAlignment="Top">
+    <Grid>
+        <Grid Background="White" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="1*"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid  x:Name="fraP2" Visibility="Visible" Margin="0,0,0,33" Grid.RowSpan="2">
+
+                <Border BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Left" Height="252" Margin="31,47,0,0" VerticalAlignment="Top" Width="676">
+                    <Grid Margin="0,0,0,-26">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="423*"/>
+                            <ColumnDefinition Width="253*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Style="{DynamicResource labelMitStyle}" Content="Seleccionar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                        <DataGrid SelectedCellsChanged="MSFlexGrid1_SelectedCellsChanged" x:Name="MSFlexGrid1" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Height="195" Width="490" Grid.ColumnSpan="2"/>
+                        <Button Cursor="Hand" x:Name="cmdAceptar2" Content="Aceptar" HorizontalAlignment="Left" Margin="82,170,0,0" VerticalAlignment="Top" Width="75" Height="28" Click="cmdAceptar2_Click" Grid.Column="1"/>
+                        <Button Click="cmdCancelar2_Click" Cursor="Hand" x:Name="cmdCancelar2" Content="Cancelar" HorizontalAlignment="Left" Margin="82,203,0,0" VerticalAlignment="Top" Width="75" Height="28" Grid.Column="1"/>
+                    </Grid>
+                </Border>
+
+
+
+            </Grid>
+        </Grid>
+
+        <Grid Visibility="Hidden" x:Name="fraP1" Background="White" HorizontalAlignment="Left" Height="183" Margin="10,10,0,0" VerticalAlignment="Top" Width="750">
+            <Label Style="{DynamicResource labelMitStyle}" Content="Introduzca PNR" HorizontalAlignment="Left" Margin="30,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.236,-0.652"/>
+            <Label Style="{DynamicResource labelMitStyle}" Content="Fecha de venta" HorizontalAlignment="Left" Margin="390,53,0,0" VerticalAlignment="Top"/>
+            <Grid HorizontalAlignment="Left" Height="32               " Margin="30,75,0,0" VerticalAlignment="Top" Width="321" Background="White">
+                <Border Style="{DynamicResource imgBorderMit}">
+                    <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                </Border>
+                <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                    <TextBox PreviewTextInput="txtPNR_PreviewTextInput" MaxLength="6" CommandManager.PreviewExecuted="textBox_PreviewExecuted" x:Name="txtPNR" Style="{DynamicResource mitStyleText2}" CharacterCasing="Upper" />
+                </Border>
+            </Grid>
+            <Button Cursor="Hand" x:Name="cmdAceptar1" Content="Aceptar" HorizontalAlignment="Left" Margin="413,140,0,0" VerticalAlignment="Top" Width="94" Height="33" Click="cmdAceptar1_Click"/>
+            <Button Cursor="Hand" x:Name="cmdCancelar1" Content="Cancelar" HorizontalAlignment="Left" Margin="521,140,0,0" VerticalAlignment="Top" Width="97" Height="33" Click="cmdCancelar1_Click"/>
+
+            <Border   Width="228" Style="{DynamicResource borderMitStyle}" Margin="390,75,0,0" Background="White" >
+                <Grid Style="{DynamicResource gridTextMit}">
+                    <DatePicker x:Name="txtFechaVenta" Margin="0,1,0,0" FontSize="16"  />
+                </Grid>
+            </Border>
+        </Grid>
+        <Label x:Name="LTITULO" Content="{}{*********}" Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="30,10,0,0" Width="745" />
+
+        <Button x:Name="BSALIR" Margin="0,12,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+            <Button.Background>
+                <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

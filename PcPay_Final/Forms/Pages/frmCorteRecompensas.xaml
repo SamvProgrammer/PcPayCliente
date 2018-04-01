@@ -1,0 +1,89 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmCorteRecompensas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"  Background="White" VerticalAlignment="Top"
+      d:DesignHeight="460" d:DesignWidth="775"
+	Title="frmCorteRecompensas" Height="465" Width="775" HorizontalAlignment="Left">
+
+    <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="263*"/>
+                <RowDefinition Height="187*"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="picture1" Visibility="Visible" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="233*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="LTITTULO" Content="Corte de Recompensas"  Style="{DynamicResource lblTitleMit}" 
+                       Margin="30,0,0,0" Width="Auto" />
+
+                <Button x:Name="BSALIR" Margin="0,2,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                    </Button.Background>
+                </Button>
+
+
+
+                <Label HorizontalAlignment="Stretch" Content="Seleccionar" Margin="30,10,145,0" Style="{DynamicResource lblsubTitleMit}" Grid.Row="1" />
+                <RadioButton IsChecked="True" x:Name="optReservacion" Content="Reimpresión de corte" HorizontalAlignment="Left" Margin="60,50,0,0" VerticalAlignment="Top" Width="259" Grid.Row="1" Checked="optReservacion_Checked"/>
+                <RadioButton x:Name="optFolio" Content="Corte" HorizontalAlignment="Left" Margin="60,80,0,0" VerticalAlignment="Top" Width="158" Grid.Row="1" Checked="optFolio_Checked"/>
+                <Button Click="cmdAceptarRecom_Click" x:Name="cmdAceptarRecom" Content="Aceptar" HorizontalAlignment="Left" 
+                        Margin="324,59,0,0" VerticalAlignment="Top" Width="93" Height="32" Grid.Row="1" Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Click="cmdCancelarRecom_Click" x:Name="cmdCancelarRecom" Content="Cancelar" HorizontalAlignment="Left" Margin="422,59,0,0" 
+                        VerticalAlignment="Top" Width="100" Height="32" Grid.Row="1" Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Grid>
+            <Grid x:Name="fraP1" Grid.RowSpan="2" d:IsHidden="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="119*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Introduzca num. operación" HorizontalAlignment="Left" Margin="30,3.485,0,0" VerticalAlignment="Top" Style="{DynamicResource labelMitStyle}" Grid.Row="1"/>
+                <Button x:Name="cmdAceptar1" Content="Aceptar" HorizontalAlignment="Left" Margin="530,17,0,0" VerticalAlignment="Top" Width="90" Height="35" Grid.Row="1">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="cmdCancelar1" Content="Cancelar" HorizontalAlignment="Left" Margin="625,17,0,0" VerticalAlignment="Top" Width="90" Height="35" Grid.Row="1">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Grid x:Name="numOrden2" HorizontalAlignment="Left" Height="32 " Margin="30,20,0,0" VerticalAlignment="Top" Width="367" Background="White" Grid.Row="1">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/referencia.png"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                        <TextBox TextWrapping="Wrap" Text="" 
+                    		Style="{DynamicResource mitStyleText2}"/>
+                    </Border>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+    </Border>
+</Page>

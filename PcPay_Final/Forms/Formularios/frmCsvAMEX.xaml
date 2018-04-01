@@ -1,0 +1,18 @@
+﻿<Window x:Class="PcPay.Forms.formularios.frmCsvAMEX"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="frmCsvAMEX" Height="162.766" Width="300" Loaded="cargarVentana" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid>
+        <Border BorderBrush="Black" Background="LightGray" BorderThickness="1" HorizontalAlignment="Left" Height="59" Margin="33,19,0,0" VerticalAlignment="Top" Width="230">
+            <Grid>
+                <Label Content="Introduzca cvv" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <TextBox PreviewTextInput="soloNumero" x:Name="txtCsv" HorizontalAlignment="Left" Height="23" Margin="101,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            </Grid>
+        </Border>
+        <Button x:Name="cmdAceptar" Click="cmdAceptar_Click" Content="Aceptar" HorizontalAlignment="Left" Margin="56,94,0,0" VerticalAlignment="Top" Width="75" Height="21"/>
+        <Button x:Name="cmdCancelar" Click="cmdCancelar_Click" Content="Cancelar" HorizontalAlignment="Left" Margin="150,94,0,0" VerticalAlignment="Top" Width="75" Height="21"/>
+
+
+
+    </Grid>
+</Window>

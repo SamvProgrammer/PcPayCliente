@@ -1,0 +1,89 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmToken" HorizontalAlignment="Left"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  VerticalAlignment="Top"
+      mc:Ignorable="d" Width="775" Height="465"	Title="frmToken" Background="White"  >
+    <Grid>
+
+        <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="4" Grid.RowSpan="2" d:IsLocked="True"/>
+
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="57*"/>
+                <RowDefinition Height="31*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Margin="0,0,10,0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="18*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="LTITULO" Content="Tokenización usuario"  Style="{DynamicResource lblTitleMit}"
+        			Margin="30,0,-9,0" Width="Auto" Grid.Row="1" Height="34" />
+
+                <Button x:Name="BSALIR" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+        			BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+        			Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Margin="0,2,-7,0" Grid.Row="1">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                    </Button.Background>
+                </Button>
+
+                <Label Style="{DynamicResource lblsubTitleMit}" Content="Tipo Tarjeta" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top" Grid.Row="2" Height="33" Width="128" FontSize="20"/>
+                <RadioButton Click="SELECCION"  x:Name="optVMC" Content="Visa / MasterCard" HorizontalAlignment="Left" Margin="239,25,0,0" VerticalAlignment="Top" IsChecked="True" Grid.Row="2" Height="21" Width="135"/>
+                <RadioButton Click="SELECCION" x:Name="optAmex" Content="American Express" HorizontalAlignment="Left" Margin="394,25,0,0" VerticalAlignment="Top" Grid.Row="2" Height="21" Width="134"/>
+                <RadioButton Click="SELECCION" x:Name="optOtras" Content="Otros" HorizontalAlignment="Left" Margin="554,25,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.706,1.489" Grid.Row="2" Height="21" Width="55"/>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="Label3" Content="Referencia" HorizontalAlignment="Left" Margin="30,3,0,0" VerticalAlignment="Top" Grid.Row="3" Height="16" Width="67"/>
+                <Label Style="{DynamicResource labelMitStyle}" x:Name="label1" Content="Número de Tarjeta" HorizontalAlignment="Left" Margin="30,3,0,0" VerticalAlignment="Top" Grid.Row="4" Height="16" Width="117"/>
+
+                <Button Cursor="Hand" x:Name="btnObtener" Content="Obtener Número" HorizontalAlignment="Right" Margin="0,0,260,0" VerticalAlignment="Top" Width="125"
+        			Height="35" Click="btnObtener_Click" Grid.Row="5">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Cursor="Hand" x:Name="btnToken" Content="Obtener token" Margin="0,0,130,0" VerticalAlignment="Top" Height="35" 
+        			Click="btnToken_Click" IsEnabled="False" RenderTransformOrigin="1.11,1.174" Grid.Row="5" HorizontalAlignment="Right" Width="125">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Cursor="Hand" x:Name="btnNuevo" Content="Nuevo Token" Margin="0,0,0,0" VerticalAlignment="Top" Height="35" 
+        			Click="btnNuevo_Click" IsEnabled="False" Grid.Row="5" HorizontalAlignment="Right" Width="125">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Grid HorizontalAlignment="Left" Height="32 " Margin="30,20,0,0" VerticalAlignment="Top" Width="272" Background="White" Grid.Row="3">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/referencia.png"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                        <TextBox MaxLength="30" KeyboardNavigation.TabIndex="1" CommandManager.PreviewExecuted="textBox_PreviewExecuted" x:Name="txtReferencia" PreviewTextInput="txtReferencia_PreviewTextInput" Style="{DynamicResource mitStyleText2}"/>
+                    </Border>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="32 " Margin="30,20,0,0" VerticalAlignment="Top" Width="272" Background="White" Grid.Row="4">
+                    <Border Style="{DynamicResource imgBorderMit}">
+                        <Image Style="{DynamicResource imageStyleMit2}" Source="/PcPay;component/Resources/referencia.png"/>
+                    </Border>
+                    <Border Style="{DynamicResource ResourceKey=textBorderMit}">
+                        <TextBox IsEnabled="False" CommandManager.PreviewExecuted="textBox_PreviewExecuted" x:Name="txtNumTDC" ToolTip="Ingrese el número de la tarjeta." Style="{DynamicResource mitStyleText2}" IsReadOnly="True"/>
+                    </Border>
+                </Grid>
+
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

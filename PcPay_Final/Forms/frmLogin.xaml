@@ -1,0 +1,133 @@
+﻿<Window x:Name="frmLogin1" x:Class="PcPay.Forms.frmLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PcPay.Forms"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="700" Loaded="frmLogin1_Loaded"
+        Icon="/PcPay;component/disenio/images/PcPay.ico" ResizeMode="NoResize" 
+        SnapsToDevicePixels="True" WindowStartupLocation="CenterOwner" KeyUp="frmLogin1_KeyUp" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}">
+    <Grid Margin="0,0,0,0">
+        <Grid Name="GFONDO" Opacity="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Resources/fondos/loginback.jpg"/>
+            </Grid.Background>
+            <Ellipse HorizontalAlignment="Right" Height="30" Margin="0,5,5,0" VerticalAlignment="Top" Width="30" ToolTip="Cerrar"
+                     Cursor="Hand" MouseDown="Ellipse_MouseDown">
+                <Ellipse.Effect>
+                    <DropShadowEffect Color="#FFCBCBCB" ShadowDepth="1" BlurRadius="10" Direction="0"/>
+                </Ellipse.Effect>
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Image HorizontalAlignment="Left" Width="292" Source="/PcPay;component/Resources/logo_mit.png" Height="70" VerticalAlignment="Top" Margin="10,10,0,0"/>
+            <Label  x:Name="lblVersion"  Content="{}{0.0.0.0}" Padding="0" Foreground="White" 
+                    HorizontalContentAlignment="Right" VerticalContentAlignment="Center"
+                    RenderTransformOrigin="0.525,3.5" Height="28" VerticalAlignment="Bottom" 
+                    Margin="10,0,0,4" FontFamily="Trebuchet MS" FontWeight="Bold" HorizontalAlignment="Left" Width="245"/>
+            <Label Content="Centro de Pagos" Margin="65,0,0,46" VerticalAlignment="Bottom" 
+            	FontSize="25"
+            	Foreground="WhiteSmoke"
+            	HorizontalContentAlignment="Center"
+            	FontFamily="Trebuchet MS" HorizontalAlignment="Left" Width="190"/>
+            <Image HorizontalAlignment="Left" Height="52" Margin="10,0,0,37" VerticalAlignment="Bottom" Width="50" Source="/PcPay;component/Resources/centroPagos.png"/>
+            <ComboBox Visibility="Hidden" x:Name="CBOGIRO" HorizontalAlignment="Left" Height="36" Margin="394,10,0,0" VerticalAlignment="Top" FontSize="25"
+                      Width="210" >
+                <ComboBoxItem Content="Retail"/>
+                <ComboBoxItem Content="Hotel"/>
+                <ComboBoxItem Content="Aeropay"/>
+                <ComboBoxItem Content="Travel"/>
+                <ComboBoxItem Content="Restaurant Prev"/>
+                <ComboBoxItem Content="Restaurant Cons"/>
+                <ComboBoxItem Content="Pago facil"/>
+            </ComboBox>
+        </Grid>
+        <Grid x:Name="GPRINCIPAL" Height="206" Background="#A50C4375" VerticalAlignment="Center"
+Opacity="1" Margin="0,119,0,125" >
+
+
+            <Border BorderThickness="1" Height="45" VerticalAlignment="Top" CornerRadius="25" Background="#7FF3F3F3" Margin="0" HorizontalAlignment="Right" Width="45" Visibility="Hidden">
+                <Button x:Name="cmdSalir" Content="X" Margin="1,-1,-1,1" Click="cmdSalir_Click" TabIndex="4" Foreground="#B20C4584" BorderBrush="{x:Null}" Background="{x:Null}" SnapsToDevicePixels="False" ClipToBounds="True" FontSize="28" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Cursor="Hand">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </Border>
+            <Border BorderThickness="5,1" Height="200" Margin="134,17,0,0" VerticalAlignment="Top" CornerRadius="130" Background="#FF547CA8" IsHitTestVisible="True" HorizontalAlignment="Left" Width="200" Visibility="Hidden">
+                <Image HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="130" Source="/PcPay;component/Resources/3.png" Margin="30,33,0,0">
+                    <Image.Effect>
+                        <DropShadowEffect/>
+                    </Image.Effect>
+                </Image>
+            </Border>
+            <Border BorderBrush="White" BorderThickness="0,0,0,2" Height="40                                     " Margin="168,25,148,0" VerticalAlignment="Top">
+                <Grid Margin="0">
+                    <Label x:Name="lblUser"  Content="Usuario:" Margin="45,5,0,0" HorizontalContentAlignment="Right" 
+        				VerticalContentAlignment="Center" Padding="0" Foreground="White" FontSize="20"
+        				HorizontalAlignment="Left" Width="122" RenderTransformOrigin="4.186,1.4"
+        				FontFamily="Trebuchet MS" Height="28" VerticalAlignment="Top">
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
+                    <TextBox PreviewTextInput="txtUser_PreviewTextInput" x:Name="txtUser" Height="30" VerticalAlignment="Top" CharacterCasing="Upper" MaxLength="25" MaxLines="1"
+        				TabIndex="1" Padding="0,1" LostFocus="txtUser_LostFocus" KeyDown="txtUser_KeyDown" 
+        				BorderBrush="{x:Null}" Background="{x:Null}" Foreground="White" VerticalContentAlignment="Center"
+        				HorizontalContentAlignment="Center" IsReadOnlyCaretVisible="True" FontSize="20" 
+        				Margin="0,5,10,0" ToolTip="Ingrese usuario" HorizontalAlignment="Right" Width="202"/>
+                    <Grid Height="30" Margin="5,4,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="30">
+                        <Grid.Effect>
+                            <DropShadowEffect/>
+                        </Grid.Effect>
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/PcPay;component/Resources/mitUser.png" Stretch="Uniform"/>
+                        </Grid.Background>
+                    </Grid>
+                </Grid>
+            </Border>
+            <Border BorderBrush="White" BorderThickness="0,0,0,2"
+                    Height="38" Margin="168,69,148,0" VerticalAlignment="Top">
+                <Grid Height="34" Margin="0,0,-1,0" VerticalAlignment="Top">
+                    <Label x:Name="lblUser1"  Content="Contraseña:" Margin="40,5,0,0" HorizontalContentAlignment="Right" 
+            			VerticalContentAlignment="Center" Padding="0" Foreground="White" FontSize="20"
+            			HorizontalAlignment="Left" Width="128" RenderTransformOrigin="0.492,0.522" FontFamily="Trebuchet MS" VerticalAlignment="Top">
+                        <Label.Effect>
+                            <DropShadowEffect/>
+                        </Label.Effect>
+                    </Label>
+                    <PasswordBox x:Name="txtPwd" VerticalAlignment="Top" Height="30" MaxLength="20" TabIndex="2" 
+            			LostFocus="txtPwd_LostFocus" KeyDown="txtPwd_KeyDown" BorderBrush="{x:Null}" 
+            			Background="{x:Null}" Foreground="White" RenderTransformOrigin="1.354,-0.529"
+            			VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectionBrush="{x:Null}" FontSize="20" Margin="0,5,10,-1" ToolTip="Ingrese su contraseña" HorizontalAlignment="Right" Width="202"/>
+                    <Grid Height="30" Margin="5,4,0,-1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="30" RenderTransformOrigin="0.433,0.533">
+                        <Grid.Effect>
+                            <DropShadowEffect/>
+                        </Grid.Effect>
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/PcPay;component/Resources/key.png" Stretch="Uniform"/>
+                        </Grid.Background>
+                    </Grid>
+                </Grid>
+            </Border>
+            <Grid x:Name="GBACEPTAR" Height="38" Margin="168,117,148,0" VerticalAlignment="Top" Cursor="Hand" Background="#99000000" MouseDown="Grid_MouseDown" ToolTip="Ingresar al sistema de pagos">
+                <Label Content="Aceptar" FontFamily="Trebuchet MS" FontSize="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" Background="{x:Null}"/>
+            </Grid>
+            <Border BorderBrush="#FF0C4375" BorderThickness="0,0,0,2" Height="2"
+                    Margin="0,143,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+            <TextBox x:Name="TMENSAJE" Margin="10,0,10,5" TextWrapping="Wrap" Text="" FontFamily="Trebuchet MS" FontSize="16" IsReadOnly="True" IsTabStop="False" Height="40" VerticalAlignment="Bottom" TextAlignment="Center" Padding="5,0" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#E5FF0000" FontWeight="SemiBold" d:IsHidden="False">
+                <TextBox.Effect>
+                    <DropShadowEffect Color="White" BlurRadius="1" ShadowDepth="0"/>
+                </TextBox.Effect>
+            </TextBox>
+
+
+        </Grid>
+    </Grid>
+
+
+
+</Window>

@@ -1,0 +1,40 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmPagoReservacion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  VerticalAlignment="Top"
+      mc:Ignorable="d" Loaded="Page_Loaded"
+	Title="frmPagoReservacion" Width="775" Height="465" HorizontalAlignment="Left">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="LTITULO" Content="{}{*********}" Style="{DynamicResource lblTitleMit}" HorizontalAlignment="Left" Margin="30,10,0,0" Width="745" />
+
+        <Button x:Name="BSALIR" Margin="0,12,2,0" Content="" Cursor="Hand" IsHitTestVisible="True" Foreground="White" 
+    		BorderBrush="{x:Null}" ToolTip="Salir del módulo." 
+    		Click="BSALIR_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30">
+            <Button.Background>
+                <ImageBrush ImageSource="/PcPay;component/Resources/close1.png"/>
+            </Button.Background>
+        </Button>
+        <Grid Margin="0,30,10,203" Grid.RowSpan="2">
+            <Label x:Name="lblReferencia" Content="Número de Reservación" HorizontalAlignment="Left" Margin="33,28,0,0" VerticalAlignment="Top" Style="{DynamicResource labelMitStyle}" RenderTransformOrigin="0.611,1.783" />
+
+
+            <Grid HorizontalAlignment="Left" Height="32               " Margin="33,49,0,0" VerticalAlignment="Top" Width="365" Background="White">
+                <Border Style="{DynamicResource imgBorderMit}">
+                    <Image Source="/PcPay;component/Resources/referencia.png" Style="{DynamicResource imageStyleMit2}"/>
+                </Border>
+                <Border Style="{DynamicResource ResourceKey=textBorderMit}" >
+                    <TextBox MaxLength="6" PreviewTextInput="Alfa" x:Name="Reservacion" LostFocus="Reservacion_LostFocus" Style="{DynamicResource mitStyleText2}"  />
+                </Border>
+            </Grid>
+            <Button x:Name="cmdContinuar" Content="Continuar" HorizontalAlignment="Left" Margin="453,49,0,0" VerticalAlignment="Top" Width="115" Height="35" Click="cmdContinuar_Click"/>
+        </Grid>
+        <Image Opacity=".1" HorizontalAlignment="Right" Height="222" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="355" Source="/PcPay;component/Resources/fondos/creditcards.png" Grid.Row="4" Grid.RowSpan="2" d:IsLocked="True"/>
+    </Grid>
+
+</Page>

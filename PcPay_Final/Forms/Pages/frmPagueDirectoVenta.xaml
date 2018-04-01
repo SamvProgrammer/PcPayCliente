@@ -1,0 +1,120 @@
+﻿<Page x:Class="PcPay.Forms.Pages.frmPagueDirectoVenta"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"  Loaded="Page_Loaded"
+      d:DesignHeight="460" d:DesignWidth="770" Background="White"
+	Title="frmPagueDirectoVenta">
+    <Page.Resources>
+        <Style TargetType="Border">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="99*"/>
+            <RowDefinition Height="128*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="78*"/>
+            <RowDefinition Height="63*"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="frameOpcion" Visibility="Visible">
+            <Grid>
+                <Label HorizontalAlignment="Stretch" Content="Seleccione opción" Margin="10,56,260,0" Style="{DynamicResource labelMitStyle}" Foreground="#FFE68779" FontWeight="SemiBold"/>
+                <Label  x:Name="LTITTULO" Style="{DynamicResource lblTitleMit}" Content="PAGUE DIRECTO VENTAS" HorizontalAlignment="Left" />
+                <RadioButton Click="optFactura_Click" IsChecked="True" x:Name="optFactura" Content="Captura factura" HorizontalAlignment="Left" Margin="172,56,0,0" VerticalAlignment="Top"/>
+                <RadioButton Click="optPago_Click" x:Name="optPago" Content="Pago abierto" HorizontalAlignment="Left" Margin="332,57,0,0" VerticalAlignment="Top"/>
+                <Button Visibility="Hidden" Click="cmdAceptarOpcion_Click" x:Name="cmdAceptarOpcion" Content="Aceptar" HorizontalAlignment="Left" Margin="314,43,0,0" VerticalAlignment="Top" Width="75"/>
+            </Grid>
+        </Border>
+
+        <Border x:Name="frameFactura" Visibility="Hidden" Grid.Row="1">
+            <Grid>
+                <Label Style="{DynamicResource labelMitStyle}" Content="Captura factura:" HorizontalAlignment="Left" Margin="10,17,0,0" VerticalAlignment="Top"/>
+                <Label Style="{DynamicResource labelMitStyle}" Content="Confirmar factura:" HorizontalAlignment="Left" Margin="301,17,0,0" VerticalAlignment="Top"/>
+                <Border   HorizontalAlignment="Left"  Margin="10,38,0,0" Width="266"  Style="{DynamicResource borderMitStyle}">
+                    <Grid Margin="0">
+                        <Image HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="3,0,0,0" Source="/PcPay;component/Resources/unknown1.png" Stretch="Fill"/>
+                        <TextBox x:Name="txtFactura" Style="{DynamicResource mitStyleText}"/>
+                    </Grid>
+                </Border>
+                <Border   HorizontalAlignment="Left"  Margin="301,38,0,0" Width="213"  Style="{DynamicResource borderMitStyle}">
+                    <Grid Margin="0">
+                        <Image HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Margin="3,0,0,0" Source="/PcPay;component/Resources/unknown1.png" Stretch="Fill"/>
+                        <TextBox x:Name="txtFacturaConfirmar" Style="{DynamicResource mitStyleText}"/>
+                    </Grid>
+                </Border>
+                <Button Click="cmdFactura_Click" x:Name="cmdFactura" Content="Aceptar" HorizontalAlignment="Left" Margin="553,38,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+                <Button Click="cmdLimpiar_Click" x:Name="cmdLimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="553,69,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+                <Button Click="cmdNuevo_Click" x:Name="cmdNuevo" Content="Nuevo" HorizontalAlignment="Left" Margin="633,38,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
+            </Grid>
+        </Border>
+        <Border x:Name="frameEmpresa" Visibility="Hidden" Grid.Row="1">
+            <Grid>
+                <Label Content="Validar información" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="Label7s" Foreground="Blue" x:Name="lblTienda" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="127"/>
+                <Label Content="Factura:" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top"/>
+                <Label Content="Empresa:" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top"/>
+                <Label Content="Monto:" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblEmpresa" Content="Label10" HorizontalAlignment="Left" Margin="78,56,0,0" VerticalAlignment="Top" Width="87"/>
+                <Label x:Name="lblFactura" Content="Label10" HorizontalAlignment="Left" Margin="78,79,0,0" VerticalAlignment="Top" Width="87"/>
+                <Label x:Name="lblMonto" Content="Label10" HorizontalAlignment="Left" Margin="78,100,0,0" VerticalAlignment="Top" Width="87"/>
+                <Label Content="¿Deseas pagar?" FontWeight="Bold" HorizontalAlignment="Left" Margin="197,100,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="cmdFacturaSi" Click="cmdFacturaSi_Click" Content="Si" HorizontalAlignment="Left" Margin="290,104,0,0" VerticalAlignment="Top" Width="24"/>
+                <Button x:Name="cmdFacturaNo" Click="cmdFacturaNo_Click" Content="No" HorizontalAlignment="Left" Margin="319,104,0,0" VerticalAlignment="Top" Width="24"/>
+            </Grid>
+        </Border>
+        <Border x:Name="framePagoAbierto" Grid.Row="1" Visibility="Hidden">
+            <Grid>
+                <Label Content="Referencia:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="Confirmar referencia:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
+                <Label Content="Monto:" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top"/>
+                <Label Content="Confirmar monto:" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtReferencia" HorizontalAlignment="Left" Height="23" Margin="125,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+                <TextBox x:Name="txtReferenciaConfir" HorizontalAlignment="Left" Height="23" Margin="125,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+                <TextBox x:Name="txtMonto" HorizontalAlignment="Left" Height="23" Margin="125,61,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+                <TextBox x:Name="txtMontoConfir" HorizontalAlignment="Left" Height="23" Margin="125,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="131"/>
+                <Button x:Name="cmdAceptarPA" Click="cmdAceptarPA_Click" Content="Aceptar" HorizontalAlignment="Left" Margin="288,14,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="cmdLimpiarPA" Click="cmdLimpiarPA_Click" Content="Limpiar" HorizontalAlignment="Left" Margin="288,50,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button x:Name="cmdNuevoPA" Click="cmdNuevoPA_Click" Content="Nuevo" HorizontalAlignment="Left" Margin="288,84,0,0" VerticalAlignment="Top" Width="75"/>
+            </Grid>
+        </Border>
+        <Border x:Name="frameResultado" Visibility="Visible" Grid.Row="2">
+            <Grid>
+                <Label Content="Resultado:" HorizontalAlignment="Left" Height="27" Margin="10,3,0,0" VerticalAlignment="Top" Width="89"/>
+                <Label  HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="170" Height="28">
+                    <TextBlock x:Name="lblAprob" FontWeight="Bold" Foreground="Green" FontSize="16" TextWrapping="Wrap">Cobro Aprobado</TextBlock>
+                </Label>
+                <Label  HorizontalAlignment="Left" Margin="216,10,0,0" VerticalAlignment="Top" Width="170" Height="48">
+                    <TextBlock x:Name="lblAuth" FontWeight="Bold" Foreground="Green" FontSize="16" TextWrapping="Wrap">Aut. <LineBreak/>000000</TextBlock>
+                </Label>
+            </Grid>
+        </Border>
+        <Border x:Name="frameError" Grid.Row="3" Visibility="Visible">
+            <Grid>
+                <Label Content="Resultado" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top"/>
+                <Label Content="Cobro rechazado" x:Name="lblDenied" Foreground="Red" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,33,0,0" VerticalAlignment="Top" Width="355"/>
+                <TextBox x:Name="lblTError" HorizontalAlignment="Left" Height="34" Margin="10,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="396"/>
+            </Grid>
+        </Border>
+        <Border x:Name="frameNuevo" Grid.Row="4" Visibility="Hidden" >
+            <Grid>
+
+            </Grid>
+        </Border>
+        <Border x:Name="frameComision" Grid.Row="4" Visibility="Hidden" >
+            <Grid>
+                <Label  x:Name="lblComisionOk" Content="Cancelación Aprobada" Foreground="Green" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="305"/>
+                <Label x:Name="lblCancelDenied" Content="Cancelación Rechazada" Foreground="Red" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="305"/>
+                <TextBox  x:Name="txtCancelDenied" HorizontalAlignment="Left" Height="24" Margin="10,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="379"/>
+
+
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>

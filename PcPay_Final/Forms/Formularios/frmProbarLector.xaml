@@ -1,0 +1,15 @@
+﻿<Window x:Class="PcPay.Forms.formularios.frmProbarLector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Probar lector" Height="295.224" Width="369.537" WindowStartupLocation="CenterScreen" Icon="/PcPay;component/PcPay.ico" ResizeMode="NoResize">
+    <Grid>
+        <Button Cursor="Hand" x:Name="CmdTest" Content="Probar Lector" HorizontalAlignment="Left" Margin="110,187,0,0" VerticalAlignment="Top" Width="119" Height="35" Click="CmdTest_Click"/>
+        <Label  x:Name="LbTestVX" Margin="42,99,13,0" VerticalAlignment="Top" Width="307" Height="44" >
+            <TextBlock TextAlignment="Justify" TextWrapping="Wrap">Se imprimirá una leyenda de prueba confirmando&#xD;&#xA; que su lector está funcionando  correctamente.</TextBlock>
+        </Label>
+        <Label  x:Name="LbTestIngenico"  HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Height="111" Width="339">
+            <TextBlock TextAlignment="Justify" TextWrapping="Wrap">Si después de dar clic en el botón, se muestra la leyenda &#xD;&#xA;&quot;PCPAY LISTO!!&quot; en la pantalla de su dispositivo, su Lector está&#xD;&#xA; funcionando correctamente, de lo contrario puede configurar&#xD;&#xA; nuevamente su dispositivo, verifique que su dispositivo se &#xD;&#xA;encuentre conectado.</TextBlock>
+        </Label>
+
+    </Grid>
+</Window>
